@@ -1,6 +1,4 @@
-import packageJson from '../../package.json';
-
-function App() {
+const JSONTest = () => {
   let currentID = 0;
 
 
@@ -38,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="DEMO">
       <label>Recipe Name</label>
       <input type='text' id='recipeName' />
       <br></br>
@@ -64,4 +62,4 @@ function App() {
   );
 }
 
-export default App;
+export default JSONTest;
