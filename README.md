@@ -16,3 +16,4 @@
 - ```6.6.22@0.0.1``` *JSON creation DEMO*
 - ```6.7.22@0.0.2a``` *Routing & Password protected page*
 - ```6.7.22@0.0.2b``` *Routing fixed??*
+- ```6.7.22@0.0.2c``` *Routing fixed?? pt2*
