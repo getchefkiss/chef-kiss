@@ -12,11 +12,11 @@ function App() {
     <div className="app-container">
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/chef-kiss/' exact element={<Home />} />
 
           {/* --- Testing --- */}
-          <Route path='/testing' element={<PageLock />} />
-          <Route path='/testing/json' element={<JSONTest />} />
+          <Route path='/chef-kiss/testing' exact element={<PageLock />} />
+          <Route path='/chef-kiss/testing/json' exact element={<JSONTest />} />
         </Routes>
       </Router>      
 
