@@ -15,7 +15,7 @@ const PageLock = () => {
             passwordFeedback.style.color = 'green';
             passwordFeedback.textContent = 'Correct.';
 
-            navigate('/testing/json')
+            navigate('/testing/tests/json_test')
         }
         else {
             passwordFeedback.style.color = 'red';

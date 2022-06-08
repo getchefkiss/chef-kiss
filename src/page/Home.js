@@ -1,11 +1,13 @@
-import Testing from './testing/JSON_Test';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
 
   return (
     <div className="home">
-        Work in progress...
+        <p>If your a developer:</p>
+        <Link to='/testing'>Testing</Link>
     </div>
   );
 }

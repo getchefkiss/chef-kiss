@@ -1,6 +1,8 @@
-const JSONTest = () => {
-  let currentID = 0;
+import React from "react";
 
+const JSONTest = () => {
+
+  let currentID = 0;
 
   function newRecipe(e) {
 

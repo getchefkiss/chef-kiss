@@ -1,6 +1,6 @@
 {
   "name": "chef-kiss",
-  "version": "0.0.2c",
+  "version": "0.0.2d",
   "private": false,
   "homepage": "https://getchefkiss.github.io/chef-kiss",
   "dependencies": {
