@@ -17,3 +17,4 @@
 - ```6.7.22@0.0.2a``` *Routing & Password protected page*
 - ```6.7.22@0.0.2b``` *Routing fixed??*
 - ```6.7.22@0.0.2c``` *Routing fixed?? pt2*
+- ```6.8.22@0.0.2d``` *Routing fixed, for real!*
