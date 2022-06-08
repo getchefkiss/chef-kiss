@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/chef-kiss/static/css/main.24439f2c.css",
-    "main.js": "/chef-kiss/static/js/main.9bee3e1f.js",
+    "main.js": "/chef-kiss/static/js/main.edb19929.js",
     "static/js/787.999c617a.chunk.js": "/chef-kiss/static/js/787.999c617a.chunk.js",
     "index.html": "/chef-kiss/index.html",
     "main.24439f2c.css.map": "/chef-kiss/static/css/main.24439f2c.css.map",
-    "main.9bee3e1f.js.map": "/chef-kiss/static/js/main.9bee3e1f.js.map",
+    "main.edb19929.js.map": "/chef-kiss/static/js/main.edb19929.js.map",
     "787.999c617a.chunk.js.map": "/chef-kiss/static/js/787.999c617a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.24439f2c.css",
-    "static/js/main.9bee3e1f.js"
+    "static/js/main.edb19929.js"
   ]
 }
