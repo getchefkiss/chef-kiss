@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/chef-kiss/static/css/main.24439f2c.css",
-    "main.js": "/chef-kiss/static/js/main.edb19929.js",
-    "static/js/787.999c617a.chunk.js": "/chef-kiss/static/js/787.999c617a.chunk.js",
-    "index.html": "/chef-kiss/index.html",
-    "main.24439f2c.css.map": "/chef-kiss/static/css/main.24439f2c.css.map",
-    "main.edb19929.js.map": "/chef-kiss/static/js/main.edb19929.js.map",
-    "787.999c617a.chunk.js.map": "/chef-kiss/static/js/787.999c617a.chunk.js.map"
+    "main.css": "/static/css/main.949e8ed6.css",
+    "main.js": "/static/js/main.6db94136.js",
+    "static/js/787.999c617a.chunk.js": "/static/js/787.999c617a.chunk.js",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.949e8ed6.css.map": "/static/css/main.949e8ed6.css.map",
+    "main.6db94136.js.map": "/static/js/main.6db94136.js.map",
+    "787.999c617a.chunk.js.map": "/static/js/787.999c617a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24439f2c.css",
-    "static/js/main.edb19929.js"
+    "static/css/main.949e8ed6.css",
+    "static/js/main.6db94136.js"
   ]
 }
