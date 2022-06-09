@@ -1,6 +1,7 @@
 {
   "short_name": "Chef Kiss",
-  "name": "The new recipe book.",
+  "name": "Chef Kiss",
+  "description": "The new recipe book.",
   "icons": [
     {
       "src": "favicon.ico",
