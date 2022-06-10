@@ -1,0 +1,6 @@
+.com-btn .cta {
+    background: var(--clr-foreground);
+    color: var(--clr-background);
+
+    font-size: 1000rem;
+}

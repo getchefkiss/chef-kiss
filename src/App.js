@@ -4,7 +4,8 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Home from './screens/Home'
 import PageLock from './screens/testing/Page_Lock';
-import JSONTest from './screens/testing/tests/json';
+import RecipeTest from './screens/testing/tests/recipe_test';
+import TestingLinks from './screens/testing/tests/Testing_Links';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
 
           {/* Testing */}
           <Route path='/testing' element={<PageLock />} />
-          <Route path='/testing/tests/json' element={<JSONTest />} />
+          <Route path='/testing/links' element={<TestingLinks />} />
+          <Route path='/testing/tests/recipe' element={<RecipeTest />} />
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,14 @@
+* {
+    --clr-danger: #E60000;
+
+    --clr-background: #000;
+    --clr-accent-1: #111;
+    --clr-accent-2: #333;
+    --clr-accent-3: #444;
+    --clr-accent-4: #666;
+    --clr-accent-5: #888;
+    --clr-accent-6: #999;
+    --clr-accent-7: #eaeaea;
+    --clr-accent-8: #fafafa;
+    --clr-foreground: #fff;
+}
