@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @import url('./core/color.css');
+@import url('./core/type.css');
 
 @import url('./components/button.css');
+@import url('./components/dialog.css');
+@import url('./components/input.css');
+
+* { box-sizing: border-box; }
 
 body {
-  margin: 0;
   font-family: -apple-system, 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: var(--clr-foreground);
-  background: var(--clr-background);
+  color: var(--foreground-00);
+  background: var(--background-00);
+
+  margin: 35px;
+
+  font-size: 14.14px;
+
+  letter-spacing: -0.5px;
 }
 
 code {
@@ -20,11 +30,10 @@ code {
 }
 
 a {
-  color: var(--clr-foreground);
-
-  text-decoration: none;
-  font-weight: bolder;
+  color: var(--foreground-00);
+  font-style: italic;
 }
 a:hover {
-  font-style: italic;
+  color: var(--foreground-00-80);
+  text-decoration: none;
 }

@@ -19,7 +19,7 @@ class RecipeForm extends React.Component {
 
     render() {
         return (
-            <form className='component-recipeform' onSubmit={this.handleSubmit}>
+            <form className='com-recipeForm' onSubmit={this.handleSubmit}>
                 <h1>{this.state.count}</h1>
                 <label>Recipe Name</label>
                 <input type='text' id='recipeName' />

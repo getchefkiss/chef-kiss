@@ -1,14 +1,15 @@
 * {
-    --clr-danger: #E60000;
+    --foreground-00: rgba(14, 14, 14, 1);
+    --foreground-00-90: rgba(14, 14, 14, .9);
+    --foreground-00-80: rgba(14, 14, 14, .8);
+    --foreground-00-70: rgba(14, 14, 14, .7);
+    --foreground-00-60: rgba(14, 14, 14, .6);
+    --foreground-00-50: rgba(14, 14, 14, .5);
+    --foreground-00-40: rgba(14, 14, 14, .4);
+    --foreground-00-30: rgba(14, 14, 14, .3);
+    --foreground-00-20: rgba(14, 14, 14, .2);
+    --foreground-00-10: rgba(14, 14, 14, .1);
+    --foreground-00-05: rgba(14, 14, 14, .05);
 
-    --clr-background: #000;
-    --clr-accent-1: #111;
-    --clr-accent-2: #333;
-    --clr-accent-3: #444;
-    --clr-accent-4: #666;
-    --clr-accent-5: #888;
-    --clr-accent-6: #999;
-    --clr-accent-7: #eaeaea;
-    --clr-accent-8: #fafafa;
-    --clr-foreground: #fff;
+    --background-00: rgb(255, 255, 255);
 }

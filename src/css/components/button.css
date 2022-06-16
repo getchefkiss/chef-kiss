@@ -1,6 +1,35 @@
-.com-btn .cta {
-    background: var(--clr-foreground);
-    color: var(--clr-background);
+button {
+    cursor: pointer;
 
-    font-size: 1000rem;
+    transition: background 0.5s, outline 0.3s;
+    transition-timing-function: ease;
+
+    background: var(--foreground-00-90);
+    color: var(--background-00);
+    border-radius: 15px;
+    border: none;
+
+    padding: 15px 25px;
+
+    outline-offset: -2px;
+}
+button:hover {
+    background: var(--foreground-00-80);
+    outline: 2px solid var(--foreground-00-05);
+}
+button:active {
+    outline: 2px solid var(--foreground-00-30);
+    background: var(--foreground-00-60)
+}
+
+.button-outline {
+    background: none !important;
+    color: var(--foreground-00) !important;
+    outline: 2px solid var(--foreground-00-10);
+}
+.button-outline:hover {
+    outline: 2px solid var(--foreground-00-20);
+}
+.button-outline:active {
+    outline: 3px solid var(--foreground-00-30);
 }

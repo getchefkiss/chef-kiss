@@ -15,7 +15,7 @@ class Recipe extends React.Component {
 
     render() {
         return (
-            <div className="component-recipe">
+            <div className="com-recipe">
                 <strong>{this.state.name}</strong> <br />
                 <p>{this.state.description}</p> <br />
                 <p>{this.state.cooktime}</p>

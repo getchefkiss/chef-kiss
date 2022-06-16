@@ -9,6 +9,7 @@ class TestingLinks extends React.Component {
                 <strong>Testing links</strong> <br />
     
                 <Link to='/testing/tests/recipe'>01: Recipe</Link> <br />
+                <Link to='/testing/tests/dialog'>02: Dialog box</Link> <br />
             </div>
         );
     }

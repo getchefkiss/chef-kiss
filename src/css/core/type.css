@@ -1,0 +1,12 @@
+.text-center { text-align: center; }
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+}
+.sub-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import makeJSON from '../../../scripts/recipe-json';
+import makeJSON from '../../../etc/recipe-json';
 import { Link } from "react-router-dom";
-import Recipe from "../../../components/Recipe";
-import RecipeForm from '../../../components/RecipeForm';
+import RecipeForm from '../../../components/recipe/RecipeForm';
+import RecipeView from "../../../components/recipe/RecipeView";
 
 class RecipeTest extends React.Component {
 
@@ -19,10 +19,7 @@ class RecipeTest extends React.Component {
         <Link to='/testing/links'>Back</Link> <br />
   
         <RecipeForm onChange={this.newReicpe} />
-  
-        <div id='recipeView'>
-          <strong>Recipes</strong> <br />
-        </div>
+        <RecipeView />
       </div>
     ); 
   }
