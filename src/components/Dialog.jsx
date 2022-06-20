@@ -1,6 +1,6 @@
 import React from "react";
 
-/* id, title, showDescription, description, content, cancelButton, canceled, confirmed */
+/* id, show, type, title, showDescription, description, content, cancelButton, canceled, confirmed */
 class Dialog extends React.Component {
     
     constructor(props) {
@@ -10,6 +10,7 @@ class Dialog extends React.Component {
             id: this.props.id,
             show: this.props.show,
 
+            type: this.props.type, // default, info, danger 
             title: this.props.title,
             description: this.props.description,
             showDescription: this.props.showDescription,

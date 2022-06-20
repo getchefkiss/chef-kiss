@@ -1,13 +1,13 @@
 button {
     cursor: pointer;
 
-    transition: background 0.5s, outline 0.3s;
+    transition: background 0.5s, outline 0.3s, border 0.3s;
     transition-timing-function: ease;
 
     background: var(--foreground-00-90);
     color: var(--background-00);
     border-radius: 15px;
-    border: none;
+    border: 2px solid var(--foreground-00-05);
 
     padding: 15px 25px;
 
@@ -15,21 +15,21 @@ button {
 }
 button:hover {
     background: var(--foreground-00-80);
-    outline: 2px solid var(--foreground-00-05);
+    border: 2px solid var(--foreground-00-05);
 }
 button:active {
-    outline: 2px solid var(--foreground-00-30);
+    border: 2px solid var(--foreground-00-30);
     background: var(--foreground-00-60)
 }
 
 .button-outline {
     background: none !important;
     color: var(--foreground-00) !important;
-    outline: 2px solid var(--foreground-00-10);
+    border: 2px solid var(--foreground-00-10);
 }
 .button-outline:hover {
-    outline: 2px solid var(--foreground-00-20);
+    border: 2px solid var(--foreground-00-20);
 }
 .button-outline:active {
-    outline: 3px solid var(--foreground-00-30);
+    border: 2px solid var(--foreground-00-30);
 }
