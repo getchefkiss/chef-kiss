@@ -17,7 +17,7 @@ src/
 ```
 
 ## Chapters
-We use chapters to describe each major version. Chapters come with main features and a name. 
+Chapters describe each major version. Chapters come with main features and a name. 
 
 |**Name**       |**Main Features**                           |**Released**|
 |---------------|--------------------------------------------|------------|
