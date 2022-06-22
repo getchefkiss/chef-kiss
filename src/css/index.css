@@ -1,39 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 @import url('./core/color.css');
+@import url('./core/flex.css');
+@import url('./core/layout.css');
 @import url('./core/type.css');
 
 @import url('./components/button.css');
-@import url('./components/dialog.css');
+@import url('./components/chip.css');
 @import url('./components/input.css');
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box;
+
+  --body-margin: 35px;
+}
 
 body {
-  font-family: -apple-system, 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  color: var(--foreground-00);
-  background: var(--background-00);
-
-  margin: 35px;
+  margin: var(--body-margin);
 
   font-size: 14.14px;
 
   letter-spacing: -0.5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+.app {
+  max-width: 425px;
+  min-width: 200px;
 
-a {
-  color: var(--foreground-00);
-  font-style: italic;
-}
-a:hover {
-  color: var(--foreground-00-80);
-  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: calc(100vh - (var(--body-margin) * 2));
 }

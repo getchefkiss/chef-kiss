@@ -1,0 +1,9 @@
+.chip {
+    background: var(--clr-brand-10);
+    color: var(--clr-brand-100);
+
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    display: inline-block;
+}

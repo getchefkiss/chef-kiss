@@ -1,35 +1,66 @@
 button {
     cursor: pointer;
 
-    transition: background 0.5s, outline 0.3s, border 0.3s;
-    transition-timing-function: ease;
+    border: none;
+    border-radius: 20px;
 
-    background: var(--foreground-00-90);
-    color: var(--background-00);
-    border-radius: 15px;
-    border: 2px solid var(--foreground-00-05);
+    padding: 17px 20px;
 
-    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: 600;
 
-    outline-offset: -2px;
-}
-button:hover {
-    background: var(--foreground-00-80);
-    border: 2px solid var(--foreground-00-05);
-}
-button:active {
-    border: 2px solid var(--foreground-00-30);
-    background: var(--foreground-00-60)
+    transition: transform .1s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
 }
 
-.button-outline {
-    background: none !important;
-    color: var(--foreground-00) !important;
-    border: 2px solid var(--foreground-00-10);
+.button {
+    cursor: pointer;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 17px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+
+    transition: transform .1s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
 }
-.button-outline:hover {
-    border: 2px solid var(--foreground-00-20);
+
+.brand-cta {
+    background: var(--clr-brand-100);
+    color: var(--clr-background);
 }
-.button-outline:active {
-    border: 2px solid var(--foreground-00-30);
+.brand-cta:hover {
+    background: var(--clr-brand-90);
+}
+.brand-cta:active {
+    transform: scale(.95);
+    background: var(--clr-brand-100);
+}
+
+.brand-quiet {
+    background: var(--clr-brand-10);
+    color: var(--clr-brand-100)
+}
+.brand-quiet:hover {
+    background: var(--clr-brand-20);
+}
+.brand-quiet:active {
+    transform: scale(.95);
+    background: var(--clr-brand-30);
+}
+
+.brand-outline {
+    border: 2px solid var(--clr-brand-5);
+    background: none;
+    color: var(--clr-brand-100);
+}
+.brand-outline:hover {
+    border-color: var(--clr-brand-20);
+}
+.brand-outline:active {
+    transform: scale(.95);
+    background: var(--clr-brand-10);
 }

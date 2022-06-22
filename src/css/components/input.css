@@ -1,12 +1,12 @@
 input[type=password] {
-    color: var(--foreground-00);
-    background: var(--foreground-00-05);
+    color: var(--clr-foreground-100);
+    background: var(--clr-foreground-10);
 
-    border-radius: 15px;
     border: none;
-    outline-offset: -2px;
+    border-radius: 20px;
+    outline: none;
 
-    padding: 15px 25px;
+    padding: 17px 20px;
 }
 input[type=password]::placeholder { color: var(--foreground-00-60); }
 input[type=password]:hover {

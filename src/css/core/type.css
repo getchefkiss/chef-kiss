@@ -1,12 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,900;1,900&display=swap');
+
+body {
+    font-family: -apple-system, 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
 .text-center { text-align: center; }
 
+.xl-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 55px;
+
+    margin: 0
+}
 .title {
-    font-weight: 700;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
     font-size: 40px;
-    line-height: 48px;
+    
+    margin: 0
 }
-.sub-title {
-    font-weight: 400;
+.header {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 25px;
+
+    margin: 0
+}
+.sub-header {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 55px;
+
+    margin: 0
+}
+
+.large-text {
+    font-weight: 500;
     font-size: 20px;
-    line-height: 24px;
+
+    margin: 0
 }
+.small-text {
+    font-weight: 500;
+    font-size: 10px;
+
+    margin: 0
+}
+
+p { margin: 0 }
+
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+input { font-family: 'Inter', sans-serif; }

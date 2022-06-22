@@ -1,0 +1,20 @@
+.bottom {
+    position: fixed;
+    bottom: var(--body-margin);
+}
+.bottom-right {
+    position: fixed;
+    bottom: var(--body-margin);
+    right: var(--body-margin);
+}
+
+.full-width {
+    width: calc(100% - (var(--body-margin) * 2));
+    max-width: 425px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

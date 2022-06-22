@@ -17,23 +17,28 @@ class PageLock extends React.Component {
 
         if (enteredPassword === password) {
             passwordFeedback.style.color = 'green';
-            passwordFeedback.textContent = 'Correct!';
             this.props.navigate('/testing/links');
         } else {
-            passwordFeedback.style.color = 'red';
-            passwordFeedback.textContent = 'Incorrect.'
+            passwordFeedback.style.color = 'var(--clr-danger)';
+            passwordFeedback.textContent = 'incorrect password'
         }
     }
 
     render() {
         return (
             <div className='screen-pagelock'>
-                <h1 className='title text-center'>This page is locked.</h1>
-                <p className='sub-title text-center'>Please enter the password.</p>
+                <div className='flex flex-column gap-15 off-center'>
+                    <h1 className='title text-center'>this page is locked</h1>
+                    <p className='large-text text-center second-text'>please enter the password</p>
+                </div>
     
-                <input type='password' placeholder='Password...' id='passwordInput' />
-                <p id='passwordFeedback' />
-                <button className='btn-bottom' onClick={this.handlePasswordSubmit}>Submit</button>
+                <div className='flex flex-column gap15 lay-bottom full-width'>                    
+                    <footer className='flex flex-column gap-15 bottom full-width'>
+                        <p id='passwordFeedback' />
+                        <input type='password' placeholder='password...' id='passwordInput' className="display-block" />
+                        <button className='brand-quiet' onClick={this.handlePasswordSubmit}>continue</button>
+                    </footer>
+                </div>
             </div>
         );
     }
