@@ -4,13 +4,13 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import packageJson from '../package.json';
 
 import Home from './screens/Home'
-import PageLock from './screens/testing/Page_Lock';
-import DialogTest from './screens/testing/tests/dialog_test';
-import RecipeTest from './screens/testing/tests/recipe_test';
-import TestingLinks from './screens/testing/tests/Testing_Links';
 import WIP from './screens/WIP';
+import Settings from './screens/Settings';
+import Beta from './screens/Beta';
+import Search from './screens/Search';
 
 import Chip from './components/base/Chip';
+import BottomNav from './components/base/Bottom-Nav';
 
 function App() {
   return (
@@ -19,14 +19,14 @@ function App() {
         <Routes>
           <Route exact path='/' element={<WIP />} />
 
+          {/* Basic screens */}
           <Route path='/home' element={<Home />} />
-
-          {/* Testing */}
-          <Route path='/testing' element={<PageLock />} />
-          <Route path='/testing/links' element={<TestingLinks />} />
-          <Route path='/testing/tests/recipe' element={<RecipeTest />} />
-          <Route path='/testing/tests/dialog' element={<DialogTest />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/beta' element={<Beta />} />
+          <Route path='/search' element={<Search />} />
         </Routes>
+
+        <BottomNav />
       </Router>
 
       <Chip className='bottom-right' content={packageJson.version.split('-')[0]} />

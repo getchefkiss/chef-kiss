@@ -1,0 +1,12 @@
+.bottom-nav {
+    display: flex;
+    flex-direction: row;
+
+    height: 100px;
+
+    position: fixed;
+    bottom: 0;
+
+    width: calc(100% - (var(--body-margin) * 2));
+    max-width: 425px;
+}

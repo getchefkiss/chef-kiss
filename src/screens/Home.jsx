@@ -1,6 +1,5 @@
-import React, { version } from 'react';
-import { Link } from 'react-router-dom'
-import getVersionType from '../etc/version-type';
+import React from 'react';
+import recipesIsEmpty from '../etc/cookie-storage';
 
 class Home extends React.Component {
 
@@ -8,20 +7,21 @@ class Home extends React.Component {
     super(props);
 
     this.state = { 
-      isDangerBuild: false
+      isNew: recipesIsEmpty()
     };
-  }
-
-  testVersionType() {
-    let versionType = getVersionType();
-    if (versionType === 'Work in progress' || versionType === 'Beta') {
-      console.log('Dangerbuild');
-    }
   }
 
   render() {
     return (
       <div className="screen-home">
+        <h1>Home page</h1>
+
+        { !this.state.isNew && (
+          <>
+            <h1>no recipes found</h1>
+            <p>click the 'new recipe' button to add a recipe.</p>
+          </>
+        )}
       </div>
     );
   }

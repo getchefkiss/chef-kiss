@@ -1,73 +1,35 @@
 @media (prefers-color-scheme: light) {
     * {
-        --clr-brand-100: rgba(102, 72, 168, 1);
-        --clr-brand-90: rgba(102, 72, 168, .9);
-        --clr-brand-80: rgba(102, 72, 168, .8);
-        --clr-brand-70: rgba(102, 72, 168, .7);
-        --clr-brand-60: rgba(102, 72, 168, .6);
-        --clr-brand-50: rgba(102, 72, 168, .5);
-        --clr-brand-40: rgba(102, 72, 168, .4);
-        --clr-brand-30: rgba(102, 72, 168, .3);
-        --clr-brand-20: rgba(102, 72, 168, .2);
-        --clr-brand-10: rgba(102, 72, 168, .1);
-        --clr-brand-5: rgba(102, 72, 168, .05);
+        --clr-background-1: #FFFBFB;
+        --clr-background-2: #FAF0EF;
 
-        --clr-background: rgb(252, 252, 255);
+        --clr-foreground-1: #21100F;
+        --clr-foreground-2: #9F8380;
 
-        --clr-foreground-100: rgba(14, 14, 31, 1);
-        --clr-foreground-90: rgba(14, 14, 31, .9);
-        --clr-foreground-80: rgba(14, 14, 31, .8);
-        --clr-foreground-70: rgba(14, 14, 31, .7);
-        --clr-foreground-60: rgba(14, 14, 31, .6);
-        --clr-foreground-50: rgba(14, 14, 31, .5);
-        --clr-foreground-40: rgba(14, 14, 31, .4);
-        --clr-foreground-30: rgba(14, 14, 31, .3);
-        --clr-foreground-20: rgba(14, 14, 31, .2);
-        --clr-foreground-10: rgba(14, 14, 31, .1);
-        --clr-foreground-5: rgba(14, 14, 31, .05);
-
-        --clr-danger: rgb(226, 51, 51);
+        --clr-brand: #E9AFAB;
+        --clr-brand-foreground: #A5716E;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     * {
-        --clr-brand-100: rgba(156, 126, 223, 1);
-        --clr-brand-90: rgba(156, 126, 223, .9);
-        --clr-brand-80: rgba(156, 126, 223, .8);
-        --clr-brand-70: rgba(156, 126, 223, .7);
-        --clr-brand-60: rgba(156, 126, 223, .6);
-        --clr-brand-50: rgba(156, 126, 223, .5);
-        --clr-brand-40: rgba(156, 126, 223, .4);
-        --clr-brand-30: rgba(156, 126, 223, .3);
-        --clr-brand-20: rgba(156, 126, 223, .2);
-        --clr-brand-10: rgba(156, 126, 223, .1);
-        --clr-brand-5: rgba(156, 126, 223, .05);
-
-        --clr-background: rgb(14, 14, 31);
-
-        --clr-foreground-100: rgba(252, 252, 255, 1);
-        --clr-foreground-90: rgba(252, 252, 255, .9);
-        --clr-foreground-80: rgba(252, 252, 255, .8);
-        --clr-foreground-70: rgba(252, 252, 255, .7);
-        --clr-foreground-60: rgba(252, 252, 255, .6);
-        --clr-foreground-50: rgba(252, 252, 255, .5);
-        --clr-foreground-40: rgba(252, 252, 255, .4);
-        --clr-foreground-30: rgba(252, 252, 255, .3);
-        --clr-foreground-20: rgba(252, 252, 255, .2);
-        --clr-foreground-10: rgba(252, 252, 255, .1);
-        --clr-foreground-5: rgba(252, 252, 255, .05);
-
-        --clr-danger: rgb(239, 95, 95);
+        --clr-background-1: #060303;
+        --clr-background-2: #151111;
+        
+        --clr-foreground-1: #FFE7E6;
+        --clr-foreground-2: #B58683;
+        
+        --clr-brand: #543533;
+        --clr-brand-foreground: #8A5E5B;
     }
 }
 
 body {
-    color: var(--clr-foreground-100);
-    background: var(--clr-background);
+    color: var(--clr-foreground-1);
+    background: var(--clr-background-1);
 }
 
-.txt-brand { color: var(--clr-brand-100); }
-.bac-brand { background: var(--clr-brand-100); }
+.txt-brand { color: var(--clr-brand-foreground); }
+.bac-brand { background: var(--clr-brand); }
 
-.second-text { color: var(--clr-foreground-50); }
+.second-text { color: var(--clr-foreground-2); }

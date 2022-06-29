@@ -13,7 +13,6 @@ src/
    - css/ Style sheets
    - etc/ Verious scripts (JSON creation and version checking)
    - screens/ App screens
-            - testing/ All feature tests ( A.B.[C] )
 ```
 
 ## Chapters
