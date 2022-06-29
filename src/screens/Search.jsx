@@ -1,33 +1,34 @@
 import React from 'react';
+import { useState } from 'react';
 import { getRecipes } from '../etc/cookie-storage';
 
-class Search extends React.Component {
+const Search = () => {
+  const [searchQ, setSearchQ] = useState('');
 
-  constructor(props) {
-    super(props);
+  const search = (e) => {
+    setSearchQ(document.getElementById('search-bar').value);
+    const recipes = getRecipes();
+    let listResults = [];
 
-    this.state = {
-        searchQ: 'Search'
+    for(let x in recipes) {
+      let _recipeName = x.toLowerCase();
+      let _searchQ = searchQ.toLowerCase();
+
+      if(_recipeName.includes(_searchQ)) { listResults.push(x) }
     }
+
+    document.getElementById('results').textContent = listResults.toString();
+
   }
 
-  search(e) {
-    let search = this.state.searchQ;
-    let results = document.getElementById('results');
-
-    results.innerText(search);
-  }
-
-  render() {
-    return (
-      <>
-        <h1>Search page</h1>
-
-        <input type='text' placeholder='Search...' onChange={this.search} value={this.state.searchQ} />
-        <p id='results'>No results...</p>
-      </>
-    );
-  }
+  return (
+    <>
+      <div className='flex flex-column gap-50 padding-top-50'>
+        <input id='search-bar' type='text' placeholder='Search...' onKeyDown={ search } onKeyUp={ search } />
+        <p id='results' />
+      </div>
+    </>
+  );
 }
 
 export default Search;

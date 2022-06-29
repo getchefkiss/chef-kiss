@@ -1,26 +1,16 @@
 import React from "react";
+import { useState } from "react";
 
-/* id, className, content */
-class Chip extends React.Component {
-    
-    constructor(props) {
-        super(props);
+const Chip = ({ id, className, content }) => {
+    const [_id, setID] = useState(id);
+    const [_className, setClassName] = useState(className);
+    const [_content, setContent] = useState(content);
 
-        this.state = {
-            id: this.props.id,
-            className: this.props.className,
-
-            content: this.props.content,
-        };
-    }
-
-    render() {
-        return (
-            <div className={`chip ${this.state.className}`} id={this.state.id}>
-                { this.props.content }
-            </div>
-        );
-    }
+    return (
+        <div className={`chip ${_className}`} id={_id}>
+            { _content }
+        </div>
+    );
 }
 
 export default Chip;

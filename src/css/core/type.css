@@ -6,52 +6,51 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     font-weight: 500;
-    font-size: 15px;
+    font-size: 17px;
 
 }
 
 .text-center { text-align: center; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
 
-.xl-title {
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-    font-size: 55px;
+.caption-2 { font-size: 11px; }
+.caption-1 { font-size: 12px; }
+.footnote { font-size: 13px; }
+.subheadline { font-size: 15px; }
+.callout { font-size: 16px; }
+.headline { font-weight: 700; }
+.large-text { font-size: 20px; }
 
-    margin: 0
-}
-.title {
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-    font-size: 40px;
-    
-    margin: 0
-}
-.header {
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-    font-size: 25px;
-
-    margin: 0
-}
-.sub-header {
+.title-3 { 
     font-family: 'Merriweather', serif;
     font-weight: 700;
-    font-size: 55px;
-
-    margin: 0
-}
-
-.large-text {
-    font-weight: 500;
     font-size: 20px;
-
-    margin: 0
 }
-.small-text {
-    font-weight: 500;
-    font-size: 10px;
+.title-2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+.title-1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+.large-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 34px;
+}
+.xl-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 44px;
+}
 
-    margin: 0
+.serif {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
 }
 
 p { margin: 0 }

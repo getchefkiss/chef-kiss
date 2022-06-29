@@ -1,17 +1,19 @@
-input[type=password] {
-    color: var(--clr-foreground-100);
-    background: var(--clr-foreground-10);
+/* type = text */
+input[type=text] {
+    border: 2px solid var(--clr-brand);
+    background: none;
+    border-radius: 500px;
 
-    border: none;
-    border-radius: 20px;
+    padding: 15px 25px;
+
     outline: none;
+    
+    font-weight: 500;
 
-    padding: 17px 20px;
+    color: var(--clr-foreground-1)
 }
-input[type=password]::placeholder { color: var(--foreground-00-60); }
-input[type=password]:hover {
-    outline: 2px solid var(--foreground-00-05);
-}
-input[type=password]:write {
-    background: var(--background-00);
+input[type=text]::placeholder {
+    color: var(--clr-brand);
+
+    font-style: italic;
 }

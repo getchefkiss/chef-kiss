@@ -1,0 +1,3 @@
+.padding-top-50 {
+    padding-top: calc(50px - var(--body-margin));
+}

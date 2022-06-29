@@ -1,0 +1,65 @@
+{
+    "Grilled Chicken": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Fried Rice": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Pumpkin' Pie": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Tacos": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Avocado Salad": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Avocado Toast": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Cookies": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Tomato Soup": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    },
+    "Hot Dogs": {
+        "title": "Recipe",
+        "description": "Recipe description",
+        "ingredients": [ "1", "2", "3", "4", "5" ],
+        "time": 30,
+        "type": 0
+    }
+}

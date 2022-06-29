@@ -3,8 +3,7 @@ import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import packageJson from '../package.json';
 
-import Home from './screens/Home'
-import WIP from './screens/WIP';
+import Home from './screens/Home';
 import Settings from './screens/Settings';
 import Beta from './screens/Beta';
 import Search from './screens/Search';
@@ -17,7 +16,7 @@ function App() {
     <div className="app flex flex-column">
       <Router basename='/'>
         <Routes>
-          <Route exact path='/' element={<WIP />} />
+          <Route exact path='/' element={<Home />} />
 
           {/* Basic screens */}
           <Route path='/home' element={<Home />} />

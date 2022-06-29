@@ -1,6 +1,5 @@
 .flex { display: flex; }
 
-/* flex direction */
 .flex-column { flex-direction: column; }
 .flex-column-reverse { flex-direction: column-reverse; }
 .flex-row { flex-direction: row; }

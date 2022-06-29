@@ -1,60 +1,29 @@
 import Cookies from "universal-cookie";
+import demoRecipes from './placeholder-recipes.json';
 
 const cookies = new Cookies();
 
 export default function cookieInit() {
     console.log('--- init cookies ---');
 
-    if(cookies.get('recipes') === undefined) {
-        console.log('\'recipes\' cookie not found');
+    if(cookies.get('recipes') === undefined || cookies.get('homeArrangement', { path: 'settings/' }) === undefined) {
+        console.log('cookies not found');
 
         //cookies.set('recipes', 0, { path: '/' });
-        const demoRecipes = {
-            'Recipe 1': {
-                'title': 'Recipe 1',
-                'description': 'Recipe 1 description',
-                'ingredients': [ '1', '2', '3', '4', '5' ],
-                'time': 30,
-                'type': 0
-            },
-            'Recipe 2': {
-                'title': 'Recipe 2',
-                'description': 'Recipe 2 description',
-                'ingredients': [ '1', '2', '3', '4', '5' ],
-                'time': 30,
-                'type': 0
-            },
-            'Recipe 3': {
-                'title': 'Recipe 3',
-                'description': 'Recipe 3 description',
-                'ingredients': [ '1', '2', '3', '4', '5' ],
-                'time': 30,
-                'type': 0
-            },
-            'Recipe 4': {
-                'title': 'Recipe 4',
-                'description': 'Recipe 4 description',
-                'ingredients': [ '1', '2', '3', '4', '5' ],
-                'time': 30,
-                'type': 0
-            },
-            'Recipe 5': {
-                'title': 'Recipe 5',
-                'description': 'Recipe 5 description',
-                'ingredients': [ '1', '2', '3', '4', '5' ],
-                'time': 30,
-                'type': 0
-            },
-        }
 
-        cookies.set('recipes', JSON.stringify(demoRecipes), { path: '/'})
+        const defaultHomeArrangement = [ 'recomended', 'last_viewed', 'all' ];
+
+        cookies.set('recipes', JSON.stringify(demoRecipes), { path: '/'});
+        cookies.set('homeArrangement', defaultHomeArrangement, { path: 'settings/'});
     }
     else {
-        console.log('found \'recipes\' cookie');
+        console.log('found cookies');
         console.log(`\'recipes\' cookie:\n- ${JSON.stringify(cookies.get('recipes'))}`);
+        console.log(`\'homeArrangement\' cookie:\n- ${cookies.get('homeArrangement', { path: 'settings/' })}`);
     }
 }
 
+/* recipes */
 export function recipesIsEmpty() {
     let recipes = cookies.get('recipes');
 
@@ -62,6 +31,12 @@ export function recipesIsEmpty() {
     else { return false; }
 }
 export function getRecipes() {
-    let recipes = JSON.parse(cookies.get('recipes'));
+    let recipes = cookies.get('recipes');
     return recipes;
+}
+
+/* home arrangement */
+export function getHomeArrangement() {
+    let homeArrangement = cookies.get('homeArrangement', { path: 'settings/' });
+    return homeArrangement;
 }

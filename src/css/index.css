@@ -1,12 +1,14 @@
 @import url('./core/color.css');
 @import url('./core/flex.css');
 @import url('./core/layout.css');
+@import url('./core/padding.css');
 @import url('./core/type.css');
 
 @import url('./components/bottom-nav.css');
 @import url('./components/button.css');
 @import url('./components/chip.css');
 @import url('./components/input.css');
+@import url('./components/switch.css');
 
 * { 
   box-sizing: border-box;

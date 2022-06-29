@@ -8,6 +8,8 @@
 
         --clr-brand: #E9AFAB;
         --clr-brand-foreground: #A5716E;
+
+        --button-active: #E9AFAB1d;
     }
 }
 
@@ -21,6 +23,8 @@
         
         --clr-brand: #543533;
         --clr-brand-foreground: #8A5E5B;
+
+        --button-active: #5435331d;
     }
 }
 
@@ -29,7 +33,7 @@ body {
     background: var(--clr-background-1);
 }
 
-.txt-brand { color: var(--clr-brand-foreground); }
-.bac-brand { background: var(--clr-brand); }
+.fore-brand { color: var(--clr-brand-foreground); }
+.back-brand { background: var(--clr-brand); }
 
 .second-text { color: var(--clr-foreground-2); }

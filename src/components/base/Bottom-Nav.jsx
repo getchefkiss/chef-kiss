@@ -1,34 +1,29 @@
 import React from "react";
+import { useState } from "react";
 
 import { Link } from 'react-router-dom';
 
-/* id */
-class BottomNav extends React.Component {
-    
-    constructor(props) {
-        super(props);
+const BottomNav = ({ id }) => {
+    const [_id, setID] = useState(id);
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
-        this.state = {
-            id: this.props.id,
-            
-            selectedIndex: 1
-        };
-    }
-
-    itemClicked(e) {
+    const itemClicked = (e) => {
 
     }
 
-    render() {
-        return (
-            <div id={this.state.id} className='bottom-nav'>
-                <Link to='/settings' onClick={this.itemClicked} className='bottom-nav-item'>settings</Link>
-                <Link to='/home' className='bottom-nav-item selected'>home</Link>
-                <Link to='/beta' className='bottom-nav-item'>beta</Link>
-                <Link to='/search' className='bottom-nav-item'>search</Link>
+    return (
+        <div id={_id} className='bottom-nav flex flex-row flex-grow full-width bottom'>
+            <div className='bottom-nav-item flex flex-column'>
+                <Link to='/home' className='bottom-nav-label'>Home</Link>
             </div>
-        );
-    }
+            <div className='bottom-nav-item flex flex-column'>
+                <Link to='/search' className='bottom-nav-label'>Search</Link>
+            </div>
+            <div className='bottom-nav-item flex flex-column'>
+                <Link to='/settings' className='bottom-nav-label'>Settings</Link>
+            </div>
+        </div>
+    );
 }
 
 export default BottomNav;

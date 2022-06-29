@@ -1,9 +1,11 @@
 .chip {
-    background: var(--clr-brand-10);
-    color: var(--clr-brand-100);
+    border: 2px solid var(--clr-brand);
 
-    padding: 5px 10px;
-    border-radius: 10px;
+    background: none;
+    
+    color: var(--clr-brand-foreground);
 
-    display: inline-block;
+    padding: 10px;
+    
+    border-radius: 100px;
 }

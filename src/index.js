@@ -6,7 +6,6 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 import packageJson from '../package.json';
-import getVersionType from './etc/version-type';
 import cookieInit from './etc/cookie-storage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,17 +15,7 @@ root.render(
   </React.StrictMode>
 );
 
-let versionTypeSlider = '';
-switch(getVersionType()) {
-  case 'Work in progress': versionTypeSlider = '[ (W) T S B P ]'; break;
-  case 'Test':             versionTypeSlider = '[ W (T) S B P ]'; break;
-  case 'Small change':     versionTypeSlider = '[ W T (S) B P ]'; break;
-  case 'Beta':             versionTypeSlider = '[ W T S (B) P ]'; break;
-  case 'Production':       versionTypeSlider = '[ W T S B (P) ]'; break;
-}
-
 console.log(`--- ${packageJson.name}@${packageJson.version} ---`)
-console.log(`Version type: ${versionTypeSlider}`)
 console.log(`Password: CKJS_2022_${packageJson.version}`)
 
 cookieInit();

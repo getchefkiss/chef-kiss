@@ -1,66 +1,52 @@
 button {
-    cursor: pointer;
-
     border: none;
-    border-radius: 20px;
+    border-radius: 500px;
 
-    padding: 17px 20px;
+    font-weight: 500;
 
-    font-size: 14px;
-    font-weight: 600;
+    padding: 15px 25px;
 
-    transition: transform .1s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
+    transition: transform .2s ease-in-out,
+                background .2s ease-in-out;
 }
-
 .button {
-    cursor: pointer;
-
-    border: none;
-    border-radius: 20px;
-
-    padding: 17px 20px;
-
-    font-size: 14px;
-    font-weight: 600;
     text-decoration: none;
     text-align: center;
 
-    transition: transform .1s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
+    font-weight: 500;
+
+    border-radius: 500px;
+
+    padding: 15px 25px;
+
+    transition: transform .2s ease-in-out,
+                background .2s ease-in-out;
 }
 
-.brand-cta {
-    background: var(--clr-brand-100);
-    color: var(--clr-background);
+.fill {
+    background: var(--clr-brand);
+    color: var(--clr-foreground-1);
 }
-.brand-cta:hover {
-    background: var(--clr-brand-90);
-}
-.brand-cta:active {
-    transform: scale(.95);
-    background: var(--clr-brand-100);
+.fill:active { 
+    background: var(--clr-brand-foreground);
+    transform: scale(.98);
 }
 
-.brand-quiet {
-    background: var(--clr-brand-10);
-    color: var(--clr-brand-100)
-}
-.brand-quiet:hover {
-    background: var(--clr-brand-20);
-}
-.brand-quiet:active {
-    transform: scale(.95);
-    background: var(--clr-brand-30);
-}
-
-.brand-outline {
-    border: 2px solid var(--clr-brand-5);
+.outline {
     background: none;
-    color: var(--clr-brand-100);
+    border: 2px solid var(--clr-brand);
+    color: var(--clr-brand-foreground);
 }
-.brand-outline:hover {
-    border-color: var(--clr-brand-20);
+.outline:active {
+    background: var(--button-active);
+    transform: scale(.98);
 }
-.brand-outline:active {
-    transform: scale(.95);
-    background: var(--clr-brand-10);
+
+.ghost {
+    color: var(--clr-brand-foreground);
+    background: none;
+}
+.ghost:active {
+    background: var(--button-active);
+    transform: scale(.98);
 }
