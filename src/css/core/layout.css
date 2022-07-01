@@ -1,10 +1,10 @@
 .bottom {
     position: fixed;
-    bottom: var(--body-margin);
+    bottom: 115px;
 }
 .bottom-right {
     position: fixed;
-    bottom: var(--body-margin);
+    bottom: 115px;
     right: var(--body-margin);
 }
 

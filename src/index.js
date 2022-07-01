@@ -15,10 +15,11 @@ root.render(
   </React.StrictMode>
 );
 
-console.log(`--- ${packageJson.name}@${packageJson.version} ---`)
-console.log(`Password: CKJS_2022_${packageJson.version}`)
-
+const startMessage = ` -+- Chef Kiss (${packageJson.version}) -+- \n` +
+                     ` -+- ---*--- -+- `
+console.log(startMessage);
 cookieInit();
+console.log(` -+- ---*--- -+- `);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

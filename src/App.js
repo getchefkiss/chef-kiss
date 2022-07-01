@@ -8,8 +8,9 @@ import Settings from './screens/Settings';
 import Beta from './screens/Beta';
 import Search from './screens/Search';
 
-import Chip from './components/base/Chip';
-import BottomNav from './components/base/Bottom-Nav';
+import Chip from './components/chip/chip';
+import BottomNav from './components/bottom-nav/bottom-nav';
+import { getShowVersionLabel } from './etc/cookie-storage';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <BottomNav />
       </Router>
 
-      <Chip className='bottom-right' content={packageJson.version.split('-')[0]} />
+      { getShowVersionLabel() && ( <Chip className='bottom-right' content={packageJson.version.split('-')[0]} /> ) }
     </div>
   );
 }

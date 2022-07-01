@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import SearchBar from '../components/search-bar/search-bar';
 import { getRecipes } from '../etc/cookie-storage';
 
 const Search = () => {
   const [searchQ, setSearchQ] = useState('');
 
   const search = (e) => {
-    setSearchQ(document.getElementById('search-bar').value);
     const recipes = getRecipes();
     let listResults = [];
 
@@ -24,7 +24,7 @@ const Search = () => {
   return (
     <>
       <div className='flex flex-column gap-50 padding-top-50'>
-        <input id='search-bar' type='text' placeholder='Search...' onKeyDown={ search } onKeyUp={ search } />
+        <SearchBar id='search-bar' type='text' placeholder='Search...' onKeyDown={ search } onKeyUp={ search } value={ searchQ } setValue={setSearchQ} />
         <p id='results' />
       </div>
     </>
