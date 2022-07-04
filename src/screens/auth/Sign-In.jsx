@@ -14,10 +14,6 @@ const SignIn = () => {
     const recipeData = await getDocs(collection(db, 'recipes'));
     setRecipes(recipeData.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   }
-  
-  useEffect(() => {
-    fetchRecipes();
-  });
 
   const signin_google = (e) => {
     signInWithGoogle();  
@@ -43,6 +39,7 @@ const SignIn = () => {
       <input id='recipe_title' placeholder='New recipe title'></input>
       <button onClick={makeNewRecipe}>Make new recipe</button>
       <br></br>
+      <button onClick={fetchRecipes}>Get recipes</button>
       <div id='recipe_list'>
         {recipes.map((data) => (
           <>
