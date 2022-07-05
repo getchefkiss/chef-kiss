@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
-import packageJson from '../package.json';
+import AuthCheck from './screens/auth/AuthCheck';
 
-import Register from './screens/auth/Register';
-import SignIn from './screens/auth/Sign-In';
-
-import { auth } from './etc/firebase';
+import SignIn from './screens/auth/Sign-In'
+import Home from './screens/Home'
 
 function App() {
+
   return (
     <div className="app flex flex-dir-col">
       <Router basename='/'>
         <Routes>
-          <Route exact path='/' element={<SignIn />} />
+          <Route exact path='/' element={<AuthCheck />} />
 
-          {/* User accounts */}
-          <Route path='/register' element={<Register />} />
-          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='/home' element={<Home />} />
         </Routes>
       </Router>
     </div>

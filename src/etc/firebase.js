@@ -1,10 +1,10 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app'
 import { 
     GoogleAuthProvider,
     getAuth,
     signInWithPopup,
     signOut
-} from 'firebase/auth';
+} from 'firebase/auth'
 import {
     getFirestore,
     query,
@@ -17,35 +17,24 @@ import {
     doc,
     deleteDoc
 } from 'firebase/firestore'
-import { firebaseConfig } from '../secret.js';
+import { firebaseConfig } from '../secret.js'
 
-const app  = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db   = getFirestore(app);
+const app  = initializeApp(firebaseConfig)
+const auth = getAuth(app)
+const db   = getFirestore(app)
 
-const googleProvider = new GoogleAuthProvider();
+const logout = () => { signOut(auth) }
+
 const signInWithGoogle = async () => {
+    const googleProvider = new GoogleAuthProvider()
     try {
-        const res  = await signInWithPopup(auth, googleProvider);
-        const user = res.user;
-        const q    = query(collection(db, 'users'), where('uid', '==', user.uid));
-        const docs = await getDocs(q);
-        
-        if(docs.docs.length === 0) {
-            await addDoc(collection(db, 'users'), {
-                uid: user.uid,
-                name: user.displayName,
-                authProvider: 'google',
-                email: user.email
-            });
-        }
+        const res  = await signInWithGoogle(auth, googleProvider)
     } catch(err) { console.log(err) }
 }
-const logout = () => { signOut(auth) }
 
 export {
     auth,
     db,
-    signInWithGoogle,
     logout,
+    signInWithGoogle,
 }

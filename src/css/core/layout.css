@@ -1,0 +1,3 @@
+.full-width {
+    width: calc(100% - (var(--body-margin) * 2));
+}

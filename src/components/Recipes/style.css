@@ -1,0 +1,22 @@
+.recipe {
+    background: var(--white-5);
+
+    padding: 10px;
+    padding-right: 25px;
+    border-radius: 1000px;
+}
+
+.recipe p { 
+    margin: 0; 
+    font-size: 15px;
+}
+
+.recipe .emoji {
+    background: var(--white-5);
+    padding: 10px;
+    border-radius: 1000px;
+}
+.recipe .title {
+    margin-top: 10px;
+    height: 18px;
+}

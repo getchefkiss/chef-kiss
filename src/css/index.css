@@ -1,7 +1,11 @@
 @import url('core/color.css');
 @import url('core/flex.css');
+@import url('core/layout.css');
 @import url('core/margin.css');
 @import url('core/padding.css');
+@import url('core/type.css');
+
+@import url(components/img.css);
 
 
 * { 
