@@ -9,7 +9,7 @@ import Home from './screens/Home'
 function App() {
 
   return (
-    <div className="app flex flex-dir-col">
+    <div className="app flex flex-dir-col gap-15">
       <Router basename='/'>
         <Routes>
           <Route exact path='/' element={<AuthCheck />} />

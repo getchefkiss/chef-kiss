@@ -6,16 +6,7 @@ import {
     signOut
 } from 'firebase/auth'
 import {
-    getFirestore,
-    query,
-    getDocs,
-    collection,
-    where,
-    addDoc,
-    setDoc,
-    getDoc,
-    doc,
-    deleteDoc
+    getFirestore
 } from 'firebase/firestore'
 import { firebaseConfig } from '../secret.js'
 
@@ -28,7 +19,7 @@ const logout = () => { signOut(auth) }
 const signInWithGoogle = async () => {
     const googleProvider = new GoogleAuthProvider()
     try {
-        const res  = await signInWithGoogle(auth, googleProvider)
+        const res = await signInWithPopup(auth, googleProvider)
     } catch(err) { console.log(err) }
 }
 
