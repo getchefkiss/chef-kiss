@@ -6,6 +6,8 @@ import AuthCheck from './screens/auth/AuthCheck';
 import SignIn from './screens/auth/Sign-In'
 import Home from './screens/Home'
 
+import packageJson from '../package.json';
+
 function App() {
 
   return (
@@ -17,6 +19,10 @@ function App() {
           <Route path='/signin' element={<SignIn />} />
           <Route path='/home' element={<Home />} />
         </Routes>
+        <p className='text-center fg-white-30'>
+          {packageJson.version} |
+          * soon to be removed.
+        </p>
       </Router>
     </div>
   );

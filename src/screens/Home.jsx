@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { auth, db } from '../etc/firebase'
+import { auth, db, logout } from '../etc/firebase'
 import IconSearch from '../components/Icons/Search';
 import TopNav from '../components/Top-Nav/TopNav'
 import Recipe from '../components/Recipes/Recipe'
@@ -50,8 +50,13 @@ const Home = () => {
 
       <h1>Recipes</h1>
       {recipes.map((data) => (
-        <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={data.cookTime} />
+        <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} />
       ))}
+
+      <button onClick={(e) => {
+        logout()
+        navigate('/signin')
+      }} className='bottom'>Log out *</button>
     </>
   );
 }

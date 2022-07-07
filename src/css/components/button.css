@@ -1,0 +1,17 @@
+button {
+    font-size: 15;
+
+    color: var(--black-100);
+    background: var(--white-100);
+
+    padding: 20px 25px;
+
+    border: none;
+    border-radius: 50000px;
+
+    cursor: pointer;
+
+    transition: color .3s ease-in-out, background .3s ease-in-out;
+}
+button:hover { color: var(--black-80); }
+button:active { background: var(--white-80); }
