@@ -8,11 +8,6 @@ import { signInWithGoogle } from '../../etc/firebase'
 const SignIn = () => {
   const navigate = useNavigate()
 
-  /*const fetchRecipes = async () => {
-    const recipeData = await getDocs(collection(db, 'recipes'))
-    setRecipes(recipeData.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  }*/
-
   return (
     <>
       <div className='flex flex-dir-col gap-45 align-items-center'>

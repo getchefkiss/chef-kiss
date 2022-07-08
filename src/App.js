@@ -5,8 +5,11 @@ import AuthCheck from './screens/auth/AuthCheck';
 
 import SignIn from './screens/auth/Sign-In'
 import Home from './screens/Home'
+import Settings from './screens/Settings'
 
 import packageJson from '../package.json';
+import ViewRecipe from './screens/recipes/ViewRecipe';
+import NewRecipe from './screens/recipes/NewRecipe';
 
 function App() {
 
@@ -18,10 +21,13 @@ function App() {
 
           <Route path='/signin' element={<SignIn />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/settings' element={<Settings />} />
+ 
+          <Route path='/recipe/new' element={<NewRecipe />} />
+          <Route path='/recipe/:recipeID' element={<ViewRecipe />} />
         </Routes>
         <p className='text-center fg-white-30'>
-          {packageJson.version} |
-          * soon to be removed.
+          {packageJson.version} | Chef Kiss 2022
         </p>
       </Router>
     </div>

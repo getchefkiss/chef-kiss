@@ -1,6 +1,9 @@
 .full-width {
     width: calc(100% - (var(--body-margin) * 2));
 }
+.full-height {
+    height: calc(100% - (var(--body-margin) * 2));
+}
 
 .bottom {
     margin-top: auto;

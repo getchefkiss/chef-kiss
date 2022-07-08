@@ -1,9 +1,10 @@
 import react from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
-const Recipe = ({ id, className, cookTime, emoji, title }) => {
+const Recipe = ({ id, className, cookTime, emoji, title, to }) => {
     return (
-        <div id={id} className={`recipe ${className} flex flex-dir-row justify-content-space-between align-items-center`}>
+        <Link to={to} id={id} className={`recipe ${className} flex flex-dir-row justify-content-space-between align-items-center`}>
             <div className='recipecardright flex flex-dir-row gap-10'>
                 <p className='emoji'>{emoji}</p>
                 <p className='title'>{title}</p>
@@ -11,7 +12,7 @@ const Recipe = ({ id, className, cookTime, emoji, title }) => {
             <div className='recipecardleft flex flex-dir-row align-items-center'>
                 <p className='cooktime fg-white-50'>{cookTime}</p>
             </div>
-        </div>
+        </Link>
     )
 }
 

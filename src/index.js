@@ -4,12 +4,15 @@ import './css/index.css'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
+import { FirebaseContext } from './screens/context/FirebaseContext'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <App />
+    <FirebaseContext>
+      <App />
+    </FirebaseContext>
   </React.StrictMode>
 )
 

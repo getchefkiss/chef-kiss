@@ -4,7 +4,12 @@
     padding: 10px;
     padding-right: 25px;
     border-radius: 1000px;
+
+    text-decoration: none;
+
+    transition: background .3s ease-in-out;
 }
+.recipe:active { background: var(--white-10); }
 
 .recipe p { 
     margin: 0; 

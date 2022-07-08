@@ -6,30 +6,13 @@ import { auth, db, logout } from '../etc/firebase'
 import IconSearch from '../components/Icons/Search';
 import TopNav from '../components/Top-Nav/TopNav'
 import Recipe from '../components/Recipes/Recipe'
-import { collection, getDocs, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore'
+import { collection, onSnapshot } from 'firebase/firestore'
+import { useFirebaseContext } from './context/FirebaseContext'
 
 const Home = () => {
   const navigate = useNavigate()
-  const [user, setUser] = useState({})
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser)
-    })
-
-  const unsubscribe = onSnapshot(collection(db, 'recipes'), (snapshot) => {
-      let recipes = []
-      snapshot.docs.forEach((doc) => {
-        recipes.push({ ...doc.data(), id: doc.id })
-      })
-      setRecipes(recipes)
-  })
-
-  return unsubscribe
-
-  }, [])
-
+  const { user, recipes } = useFirebaseContext()
+  
   return (
     <>
       <TopNav>
@@ -42,7 +25,7 @@ const Home = () => {
           <button className='topnavbtn' onClick={(e) => { console.log('You clicked search!') }}>
             <IconSearch width='19.2' height='19.2' stroke='white' fill='none' />
           </button>
-          <button className='topnavbtn' onClick={(e) => { console.log('You clicked PFP!') }}>
+          <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
             <img src={user.photoURL} width='48' height='48' style={{ borderRadius: 1000 }}></img>
           </button>
         </div>
@@ -50,13 +33,11 @@ const Home = () => {
 
       <h1>Recipes</h1>
       {recipes.map((data) => (
-        <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} />
+        
+        <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} to={`/recipe/${data.id}`} />
       ))}
 
-      <button onClick={(e) => {
-        logout()
-        navigate('/signin')
-      }} className='bottom'>Log out *</button>
+      <button onClick={(e) => { navigate('/recipe/new') }} className='bottom'>New recipe</button>
     </>
   );
 }
