@@ -7,6 +7,7 @@ import IconBack from '../../components/Icons/Back'
 import TopNav from '../../components/Top-Nav/TopNav'
 import { db } from '../../etc/firebase'
 import { useFirebaseContext } from '../context/FirebaseContext'
+import compatability from '../../etc/compatability.json'
 
 const ViewRecipe = () => {
     const navigate = useNavigate()
@@ -16,6 +17,7 @@ const ViewRecipe = () => {
     const [currentRecipe, setCurrentRecipe] = useState()
     const [foundRecipe, setFoundRecipe] = useState(false)
     const [myRecipe, setMyRecipe] = useState(false)
+    const [uncompatible, setUncompatible] = useState(true)
 
     useEffect(() => {
         let selectedRecipe = undefined
@@ -28,10 +30,12 @@ const ViewRecipe = () => {
             }
         }
         setCurrentRecipe(recipes[selectedRecipe])
+
+        if(compatability.recipeFormatVersion === selectedRecipe) { setUncompatible(false) }
     }, [])
 
     const deleteRecipe = (e) => {
-        let deleteCheck = window.confirm('are you sure you want to delete ' + currentRecipe.title) + ' ?'
+        let deleteCheck = window.confirm('are you sure you want to delete ' + currentRecipe.title + ' ?')
         if (deleteCheck == true) { 
             deleteDoc(doc(db, 'recipes', currentRecipe.id))
             navigate('/home')
@@ -51,19 +55,28 @@ const ViewRecipe = () => {
             </TopNav>
 
             {foundRecipe && (
-                <ul>
-                    <li>cookTime: {currentRecipe.cookTime}m</li>
-                    <li>creator: {currentRecipe.creator}</li>
-                    <li>creatorUID: {currentRecipe.creatorUID}</li>
-                    <li>dateCreated: {currentRecipe.dateCreated[0]} | {currentRecipe.dateCreated[1]}</li>
-                    <li>description: {currentRecipe.description}</li>
-                    <li>emoji: {currentRecipe.emoji}</li>
-                    <li>id: {currentRecipe.id}</li>
-                    <li>private: {currentRecipe.private.toString()}</li>
-                    <li>steps: {currentRecipe.steps.toString()}</li>
-                    <li>title: {currentRecipe.title}</li>
-                    <li>utensils: {currentRecipe.utensils.toString()}</li>
-                </ul>
+                <>
+                    {uncompatible == false && (
+                        <p>Recipe uncompatible!</p>
+                    )}
+
+                    <ul style={{background: currentRecipe.accentColor}}>
+                        <li>cookTime: {currentRecipe.cookTime}m</li>
+                        <li>creator: {currentRecipe.creator}</li>
+                        <li>creatorUID: {currentRecipe.creatorUID}</li>
+                        <li>dateCreated: {currentRecipe.dateCreated[0]} | {currentRecipe.dateCreated[1]}</li>
+                        <li>description: {currentRecipe.description}</li>
+                        <li>emoji: {currentRecipe.emoji}</li>
+                        <li>formatVersion: {currentRecipe.formatVersion}</li>
+                        <li>id: {currentRecipe.id}</li>
+                        <li>private: {currentRecipe.private.toString()}</li>
+                        <li>steps: {currentRecipe.steps.toString()}</li>
+                        <li>title: {currentRecipe.title}</li>
+                        <li>utensils: {currentRecipe.utensils.toString()}</li>
+                        <li>formatVersion: {currentRecipe.formatVersion}</li>
+                        <li>accentColor: {currentRecipe.accentColor}</li>
+                    </ul>
+                </>
             )}
             {foundRecipe == false && (<p>Recipe not found</p>)}
 

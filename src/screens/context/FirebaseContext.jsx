@@ -10,6 +10,7 @@ const firebaseContext = createContext()
 export const FirebaseContext = ({ children }) => {
     const [user, setUser] = useState({})
     const [recipes, setRecipes] = useState([])
+    const [myRecipes, setMyRecipes] = useState([])
 
     useEffect(() => {
         auth.onAuthStateChanged((currentUser) => {
@@ -18,17 +19,21 @@ export const FirebaseContext = ({ children }) => {
       
         const unsubscribe = onSnapshot(collection(db, 'recipes'), (snapshot) => {
             let recipes = []
+            let myRecipes = []
             snapshot.docs.forEach((doc) => {
               recipes.push({ ...doc.data(), id: doc.id })
+
+              if(doc.data().creatorUID == auth.currentUser.uid) { myRecipes.push({ ...doc.data(), id: doc.id }) }
             })
             setRecipes(recipes)
+            setMyRecipes(myRecipes)
         })
 
         return unsubscribe
     }, [])
 
     return (
-        <firebaseContext.Provider value={{ user, recipes }}>
+        <firebaseContext.Provider value={{ user, recipes, myRecipes }}>
             { children }
         </firebaseContext.Provider>
     )

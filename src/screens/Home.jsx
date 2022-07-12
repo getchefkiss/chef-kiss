@@ -11,8 +11,8 @@ import { useFirebaseContext } from './context/FirebaseContext'
 
 const Home = () => {
   const navigate = useNavigate()
-  const { user, recipes } = useFirebaseContext()
-  
+  const { user, recipes, myRecipes } = useFirebaseContext()
+
   return (
     <>
       <TopNav>
@@ -22,7 +22,7 @@ const Home = () => {
         </h1>
         
         <div className='flex flex-dir-row gap-15'>
-          <button className='topnavbtn' onClick={(e) => { console.log('You clicked search!') }}>
+          <button className='topnavbtn' onClick={(e) => { navigate('/search') }}>
             <IconSearch width='19.2' height='19.2' stroke='white' fill='none' />
           </button>
           <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
@@ -31,13 +31,15 @@ const Home = () => {
         </div>
       </TopNav>
 
-      <h1>Recipes</h1>
-      {recipes.map((data) => (
-        
-        <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} to={`/recipe/${data.id}`} />
-      ))}
+      <div className='flex flex-dir-col gap-15'>
+        <h1>Recipes</h1>
+        {myRecipes.map((data) => (
+          <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} to={`/recipe/${data.id}`} />
+        ))}
+      </div>
 
-      <button onClick={(e) => { navigate('/recipe/new') }} className='bottom'>New recipe</button>
+      <button onClick={(e) => { navigate('/recipe/new') }} 
+              className='bottom margin-left-auto margin-right-auto sticky' style={{ width: 208 }}>New recipe</button>
     </>
   );
 }

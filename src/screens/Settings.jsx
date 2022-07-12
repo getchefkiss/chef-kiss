@@ -17,17 +17,19 @@ const Settings = () => {
                     <IconBack width='19.2' height='19.2' stroke='white' fill='none' />
                 </button>
 
+                <p className='topnavtitle'>Settings</p>
+
                 <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
                     <img src={user.photoURL} width='48' height='48' style={{ borderRadius: 1000 }}></img>
                 </button>
             </TopNav>
 
-            <h1>Settings</h1>
-
-            <button onClick={(e) => {
-                logout()
-                navigate('/signin')
-            }} className='button-second bottom'>Log out</button>
+            <div className='flex flex-dir-col gap-10 bottom'>
+                <button onClick={(e) => {
+                    logout()
+                    navigate('/signin')
+                }}>Log out</button>
+            </div>
         </>
     )
 }

@@ -16,7 +16,7 @@
     font-size: 15px;
 }
 
-.recipe .emoji {
+.recipe .recipeicon {
     background: var(--white-5);
     padding: 10px;
     border-radius: 1000px;

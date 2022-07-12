@@ -10,11 +10,12 @@ import Settings from './screens/Settings'
 import packageJson from '../package.json';
 import ViewRecipe from './screens/recipes/ViewRecipe';
 import NewRecipe from './screens/recipes/NewRecipe';
+import Search from './screens/Search';
 
 function App() {
 
   return (
-    <div className="app flex flex-dir-col gap-15">
+    <div className="app flex flex-dir-col gap-30">
       <Router basename='/'>
         <Routes>
           <Route exact path='/' element={<AuthCheck />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path='/signin' element={<SignIn />} />
           <Route path='/home' element={<Home />} />
           <Route path='/settings' element={<Settings />} />
+          <Route path='/search' element={<Search />} />
  
           <Route path='/recipe/new' element={<NewRecipe />} />
           <Route path='/recipe/:recipeID' element={<ViewRecipe />} />

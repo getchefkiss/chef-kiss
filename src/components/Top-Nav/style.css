@@ -14,3 +14,7 @@
 .topnavbtn:active {
     background: var(--white-5);
 }
+
+.topnavtitle {
+    color: red;
+}

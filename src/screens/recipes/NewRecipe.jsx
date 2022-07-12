@@ -17,10 +17,11 @@ const NewRecipe = () => {
         const description = document.getElementById('description').value
         const emoji = document.getElementById('emoji').value
         const ingredients = document.getElementById('ingredients').value.split(', ')
-        const isPrivate = document.getElementById('private').value
+        const isPrivate = document.getElementById('private').checked
         const steps = document.getElementById('steps').value.split(', ')
         const title = document.getElementById('title').value
         const utensils = document.getElementById('utensils').value.split(', ')
+        const accentColor = document.getElementById('accentColor').value.toString()
 
         addDoc(collection(db, 'recipes'), {
             cookTime: cookTime,
@@ -34,7 +35,8 @@ const NewRecipe = () => {
             steps: steps,
             title: title,
             utensils: utensils,
-            version: 1.0,
+            formatVersion: '1.1',
+            accentColor: accentColor,
         })
 
         navigate('/home')
@@ -47,7 +49,7 @@ const NewRecipe = () => {
                     <IconBack width='19.2' height='19.2' stroke='white' fill='none' />
                 </button>
 
-                <p>New recipe</p>
+                <p className='topnavtitle'>New recipe</p>
     
                 <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
                     <img src={user.photoURL} width='48' height='48' style={{ borderRadius: 1000 }}></img>
@@ -68,7 +70,8 @@ const NewRecipe = () => {
                 <input id='steps' type='text' placeholder='steps (sep ,)'></input>
                 <input id='title' type='text' placeholder='title'></input>
                 <input id='utensils' type='text' placeholder='utensils (sep ,)'></input>
-                
+                <input id='accentColor' type='color'></input>
+
                 <button className='bottom'>
                     Create
                 </button>

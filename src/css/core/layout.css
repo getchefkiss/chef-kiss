@@ -8,3 +8,5 @@
 .bottom {
     margin-top: auto;
 }
+
+.sticky { display: sticky }
