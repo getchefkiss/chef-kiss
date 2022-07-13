@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import IconBack from '../components/Icons/Back'
 import IconSearch from '../components/Icons/Search'
 import TopNav from '../components/Top-Nav/TopNav'
+import { setLoggedinCookie } from '../etc/cookies'
 import { logout } from '../etc/firebase'
 import { useFirebaseContext } from './context/FirebaseContext'
 
@@ -27,6 +28,7 @@ const Settings = () => {
             <div className='flex flex-dir-col gap-10 bottom'>
                 <button onClick={(e) => {
                     logout()
+                    //setLoggedinCookie(false)
                     navigate('/signin')
                 }}>Log out</button>
             </div>

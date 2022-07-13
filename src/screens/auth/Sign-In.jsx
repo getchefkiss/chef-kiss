@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import IconLogoSmall from '../../components/Icons/LogoSmall'
+import { setLoggedinCookie } from '../../etc/cookies'
 
 import { signInWithGoogle } from '../../etc/firebase'
 
@@ -20,8 +21,16 @@ const SignIn = () => {
       </div>
 
       <button className='bottom' onClick={async (e) => {
-        await signInWithGoogle();
-        navigate('/home');
+        switch(await signInWithGoogle()) {
+          case 'auth/user-disabled': 
+            alert('Sorry, but this account is disabled. Please try a diffrent account.')
+            break
+          case true: 
+            navigate('/home')
+            break
+        }
+        //setLoggedinCookie(true)
+        //navigate('/home')
       }}>Sign in with Google</button>
     </>
   );

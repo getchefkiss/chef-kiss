@@ -1,6 +1,7 @@
 import react from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getLoggedinCookie } from '../../etc/cookies'
 import { auth } from '../../etc/firebase'
 
 const AuthCheck = () => {

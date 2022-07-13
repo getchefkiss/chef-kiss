@@ -36,7 +36,12 @@ const signInWithGoogle = async () => {
             });
         }
 
-    } catch(err) { console.warn(err) }
+        return true
+
+    } catch(err) { 
+        console.warn(err)
+        return err.code
+    }
 }
 
 export {
