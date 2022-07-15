@@ -1,23 +1,23 @@
 import react from 'react'
 import { Link } from 'react-router-dom'
-import './style.css'
+import './style.scss'
 
-const Recipe = ({ id, className, cookTime, emoji, title, to, isPrivate }) => {
-    return (
-        <Link to={to} id={id} className={`recipe ${className} flex flex-dir-row justify-content-space-between align-items-center`}>
-            <div className='recipecardright flex flex-dir-row gap-10'>
-                <div className='recipeicon'>
-                    <p className='emoji'>{emoji}</p>
-                </div>
-                <p className='title'>
-                    {!isPrivate ?? '[🔒]'} {title}
-                </p>
-            </div>
-            <div className='recipecardleft flex flex-dir-row align-items-center'>
-                <p className='cooktime fg-white-50'>{cookTime}</p>
-            </div>
-        </Link>
-    )
+const Recipe = ({ id, className, cookTime, imageURL, stepCount, title, to, isPrivate }) => {
+  return (
+    <Link to={to} id={id} className={`recipecard ${className}s padding-10`}>
+      <div className="recipecardimage">
+        <img src={imageURL} />
+        <img src={imageURL} className="recipecardimageshadow" />
+      </div>
+
+      <div className="recipecardtext flex-dir-col gap-0">
+        <p className="recipecardtitle">{title}</p>
+        <p className="recipecardstats sub-text">
+          {cookTime} | {stepCount} steps
+        </p>
+      </div>
+    </Link>
+  )
 }
 
 export default Recipe

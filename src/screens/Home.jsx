@@ -2,46 +2,72 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { auth, db, logout } from '../etc/firebase'
-import IconSearch from '../components/Icons/Search';
 import TopNav from '../components/Top-Nav/TopNav'
 import Recipe from '../components/Recipes/Recipe'
-import { collection, onSnapshot } from 'firebase/firestore'
 import { useFirebaseContext } from './context/FirebaseContext'
+import CKButton from '../components/CKButton/CKButton'
+import RecipeView from '../components/RecipeView/RecipeView'
+import SearchIcon from '@mui/icons-material/Search'
 
 const Home = () => {
   const navigate = useNavigate()
   const { user, recipes, myRecipes } = useFirebaseContext()
+  const [recipeKeyID, setRecipeKeyID] = useState([])
 
   return (
     <>
       <TopNav>
-        <h1>
-          Welcome back, <br/>
-          <span className='fg-white-50'>{user.displayName}</span>
-        </h1>
-        
-        <div className='flex flex-dir-row gap-15'>
-          <button className='topnavbtn' onClick={(e) => { navigate('/search') }}>
-            <IconSearch width='19.2' height='19.2' stroke='white' fill='none' />
+        <h1 className="bebas-nue font-size-50">Welcome back</h1>
+
+        <div className="border flex flex-dir-row gap-15">
+          <button
+            className="topnavbtn"
+            onClick={(e) => {
+              navigate('/search')
+            }}
+          >
+            <SearchIcon width="19.2" height="19.2" stroke="white" fill="none" />
           </button>
-          <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
-            <img src={user.photoURL} width='48' height='48' style={{ borderRadius: 1000 }}></img>
+          <button
+            className="topnavbtn"
+            onClick={(e) => {
+              navigate('/settings')
+            }}
+          >
+            <img src={user.photoURL} width="48" height="48" style={{ borderRadius: 15 }}></img>
           </button>
         </div>
       </TopNav>
 
-      <div className='flex flex-dir-col gap-15'>
+      <div className="flex flex-dir-col gap-15">
         <h1>Recipes</h1>
-        {myRecipes.map((data) => (
-          <Recipe key={data.id} emoji={data.emoji} title={data.title} cookTime={`${data.cookTime}m`} to={`/recipe/${data.id}`} />
-        ))}
+        <RecipeView>
+          {myRecipes.map((data) => (
+            <Recipe
+              key={data.id}
+              emoji={data.emoji}
+              imageURL={`https://source.unsplash.com/random/200x200?sig=${data.id}`}
+              stepCount="null"
+              title={data.title}
+              cookTime={`${data.cookTime}m`}
+              to={`/recipe/${data.id}`}
+            />
+          ))}
+        </RecipeView>
       </div>
 
-      <button onClick={(e) => { navigate('/recipe/new') }} 
-              className='bottom margin-left-auto margin-right-auto sticky' style={{ width: 208 }}>New recipe</button>
+      <CKButton
+        onClick={(e) => {
+          navigate('/recipe/new')
+        }}
+        varient="fill"
+        className="bottom margin-left-auto margin-right-auto sticky"
+        style={{ width: 178 }}
+      >
+        New recipe
+      </CKButton>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

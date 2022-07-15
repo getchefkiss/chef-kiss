@@ -1,0 +1,18 @@
+input[type='text'] {
+  border-radius: 5000px;
+
+  padding: 20px 25px;
+
+  outline: none;
+}
+input[type='text']:not(:placeholder-shown) {
+  background: none;
+}
+
+input {
+  color: var(--white-100);
+}
+input::placeholder {
+  color: var(--white-20);
+  font-style: italic;
+}

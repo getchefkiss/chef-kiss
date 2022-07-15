@@ -1,0 +1,26 @@
+@use '../../scss/variables' as v;
+
+.recipeview {
+  $gap: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+
+  .recipeviewcol {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+    flex: 50%;
+    gap: $gap;
+
+    .recipecard {
+      max-width: 45%;
+    }
+  }
+
+  .offcol {
+    transform: translateY(21px);
+  }
+}

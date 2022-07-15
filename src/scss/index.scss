@@ -1,0 +1,35 @@
+@import './variables';
+
+@import 'core/color.scss';
+@import 'core/flex.scss';
+@import 'core/layout.scss';
+@import 'core/margin.scss';
+@import 'core/padding.scss';
+@import 'core/shadow.scss';
+@import 'core/type.scss';
+
+@import 'components/input.scss';
+
+* {
+  box-sizing: border-box;
+
+  $body-margin: 40px;
+}
+
+body {
+  margin: $body-margin;
+
+  font-size: 14.14px;
+
+  letter-spacing: -0.5px;
+}
+
+.app {
+  max-width: $max-width;
+  min-width: $min-width;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  height: calc(100vh - ($body-margin * 2));
+}

@@ -1,9 +1,10 @@
-import { collection, onSnapshot } from 'firebase/firestore'
+import { collection, onSnapshot, updateDoc } from 'firebase/firestore'
 import react, { useState } from 'react'
 import { createContext } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import { auth, db } from '../../etc/firebase'
+import data from '../../etc/compatability.json'
 
 const firebaseContext = createContext()
 
@@ -20,15 +21,24 @@ export const FirebaseContext = ({ children }) => {
         const unsubscribe = onSnapshot(collection(db, 'recipes'), (snapshot) => {
             let recipes = []
             let myRecipes = []
-            snapshot.docs.forEach((doc) => {
-              recipes.push({ ...doc.data(), id: doc.id })
+            let needMatchingFormatVersion = data.needRecipeFormatVersion
 
-              if(doc.data().creatorUID == auth.currentUser.uid) { myRecipes.push({ ...doc.data(), id: doc.id }) }
+            snapshot.docs.forEach((doc) => {
+                if(needMatchingFormatVersion) {
+                    if(data.recipeFormatVersion === doc.data().formatVersion) {
+                        recipes.push({ ...doc.data(), id: doc.id })
+                        if(doc.data().creatorUID == auth.currentUser.uid) { myRecipes.push({ ...doc.data(), id: doc.id }) }
+                    } else {
+                        console.log(`Found problem doc: ${doc.id}->${doc.data().title}`)
+                    }
+                } else {
+                    recipes.push({ ...doc.data(), id: doc.id })
+                    if(doc.data().creatorUID == auth.currentUser.uid) { myRecipes.push({ ...doc.data(), id: doc.id }) }
+                }
             })
             setRecipes(recipes)
             setMyRecipes(myRecipes)
         })
-
         return unsubscribe
     }, [])
 

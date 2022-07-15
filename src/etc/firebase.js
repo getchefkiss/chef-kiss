@@ -11,11 +11,13 @@ import {
     getDocs,
     getFirestore, query, where
 } from 'firebase/firestore'
+//import { getStorage } from 'firebase/storage'
 import { firebaseConfig } from '../secret.js'
 
-const app  = initializeApp(firebaseConfig)
-const auth = getAuth(app)
-const db   = getFirestore(app)
+const app     = initializeApp(firebaseConfig)
+const auth    = getAuth(app)
+const db      = getFirestore(app)
+//const storage = getStorage(app) 
 
 const logout = () => { signOut(auth) }
 
@@ -47,6 +49,7 @@ const signInWithGoogle = async () => {
 export {
     auth,
     db,
+//    storage,
     logout,
     signInWithGoogle,
 }

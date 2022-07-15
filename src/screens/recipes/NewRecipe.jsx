@@ -1,83 +1,154 @@
 import { addDoc, collection } from 'firebase/firestore'
-import react from 'react'
+import react, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import IconBack from '../../components/Icons/Back'
 import TopNav from '../../components/Top-Nav/TopNav'
 import { db } from '../../etc/firebase'
 import { useFirebaseContext } from '../context/FirebaseContext'
+import data from '../../etc/compatability.json'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 const NewRecipe = () => {
-    const navigate = useNavigate()
-    const { user, recipe } = useFirebaseContext()
+  const navigate = useNavigate()
+  const { user, recipe } = useFirebaseContext()
 
-    const createNewRecipe = (e) => {
-        e.preventDefault()
-        
-        const cookTime = document.getElementById('cooktime').value
-        const description = document.getElementById('description').value
-        const emoji = document.getElementById('emoji').value
-        const ingredients = document.getElementById('ingredients').value.split(', ')
-        const isPrivate = document.getElementById('private').checked
-        const steps = document.getElementById('steps').value.split(', ')
-        const title = document.getElementById('title').value
-        const utensils = document.getElementById('utensils').value.split(', ')
-        const accentColor = document.getElementById('accentColor').value.toString()
+  const [cookTime, setCookTime] = useState(0)
+  const [description, setDescription] = useState('Placeholder description')
+  const [emoji, setEmoji] = useState('⛔')
+  const [ingredients, setIngredients] = useState([])
+  const [isPrivate, setIsPrivate] = useState(true)
+  const [steps, setSteps] = useState([])
+  const [title, setTitle] = useState('Placeholder title')
+  const [utensils, setUtensils] = useState([])
+  const [recipeImage, setRecipeImage] = useState(undefined)
+  const [imageURLS, setImageURLS] = useState(null)
 
-        addDoc(collection(db, 'recipes'), {
-            cookTime: cookTime,
-            creator: user.displayName,
-            creatorUID: user.uid,
-            dateCreated: Date.now(),
-            description: description,
-            emoji: emoji,
-            ingredients: ingredients,
-            private: isPrivate,
-            steps: steps,
-            title: title,
-            utensils: utensils,
-            formatVersion: '1.1',
-            accentColor: accentColor,
-        })
+  //const imageRef = ref(storage, 'recipeimages/')
+  const createNewRecipe = (e) => {
+    e.preventDefault()
 
-        navigate('/home')
-    }
+    //uploadBytes(imageRef, recipeImage).then((snapshot) => {
+    //    getDownloadURL(snapshot.ref).then((url) => {
+    //        setImageURLS((prev) => [...prev, url])
+    //    })
+    //})
 
-    return (
-        <>
-            <TopNav>   
-                <button className='topnavbtn' onClick={(e) => { navigate(-1) }}>
-                    <IconBack width='19.2' height='19.2' stroke='white' fill='none' />
-                </button>
+    addDoc(collection(db, 'recipes'), {
+      cookTime: cookTime,
+      creator: user.displayName,
+      creatorUID: user.uid,
+      dateCreated: Date.now(),
+      description: description,
+      emoji: emoji,
+      ingredients: ingredients,
+      private: isPrivate,
+      steps: steps,
+      title: title,
+      utensils: utensils,
+      formatVersion: data.recipeFormatVersion,
+      //imageURL:
+    })
 
-                <p className='topnavtitle'>New recipe</p>
-    
-                <button className='topnavbtn' onClick={(e) => { navigate('/settings') }}>
-                    <img src={user.photoURL} width='48' height='48' style={{ borderRadius: 1000 }}></img>
-                </button>
-            </TopNav>
+    navigate('/home')
+  }
 
-            <form onSubmit={createNewRecipe} className='flex flex-dir-col gap-15 full-height'>
-                <input id='cooktime' type='number' placeholder='cook time (mins)'></input>
-                <input id='description' type='text' placeholder='description'></input>
-                <input id='emoji' type='text' placeholder='emoji'></input>
-                <input id='ingredients' type='text' placeholder='ingredients (sep ,)'></input>
-                
-                <div className='flex flex-dir-row gap-5'>
-                    <input id='private' type='checkbox' placeholder='isPrivate'></input>
-                    <label>Is Private</label>
-                </div>
+  return (
+    <>
+      <TopNav>
+        <button
+          className="topnavbtn"
+          onClick={(e) => {
+            navigate(-1)
+          }}
+        >
+          <ArrowBackIcon width="19.2" height="19.2" stroke="white" fill="none" />
+        </button>
 
-                <input id='steps' type='text' placeholder='steps (sep ,)'></input>
-                <input id='title' type='text' placeholder='title'></input>
-                <input id='utensils' type='text' placeholder='utensils (sep ,)'></input>
-                <input id='accentColor' type='color'></input>
+        <p className="topnavtitle">New recipe</p>
 
-                <button className='bottom'>
-                    Create
-                </button>
-            </form>
-        </>
-    )
+        <button
+          className="topnavbtn"
+          onClick={(e) => {
+            navigate('/settings')
+          }}
+        >
+          <img src={user.photoURL} width="48" height="48" style={{ borderRadius: 1000 }}></img>
+        </button>
+      </TopNav>
+
+      <form onSubmit={createNewRecipe} className="flex flex-dir-col gap-15 full-height">
+        <input
+          type="number"
+          placeholder="cook time (mins)"
+          onChange={(e) => {
+            setCookTime(e.target.value.toString())
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="description"
+          onChange={(e) => {
+            setDescription(e.target.value)
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="emoji"
+          onChange={(e) => {
+            setEmoji(e.target.value)
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="ingredients (sep ,)"
+          onChange={(e) => {
+            setIngredients(e.target.value.split(', '))
+          }}
+        ></input>
+
+        <div className="flex flex-dir-row gap-5">
+          <input
+            type="checkbox"
+            placeholder="isPrivate"
+            onChange={(e) => {
+              setIsPrivate(e.target.checked)
+            }}
+          ></input>
+          <label>Is Private</label>
+        </div>
+
+        <input
+          type="text"
+          placeholder="steps (sep ,)"
+          onChange={(e) => {
+            setSteps(e.target.value.split(', '))
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="title"
+          onChange={(e) => {
+            setTitle(e.target.value)
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="utensils (sep ,)"
+          onChange={(e) => {
+            setUtensils(e.target.value.split(', '))
+          }}
+        ></input>
+        <input
+          type="file"
+          accept="image/jpg, image/jpeg"
+          onChange={(e) => {
+            setRecipeImage(e.target.files[0])
+          }}
+        ></input>
+
+        <button className="bottom">Create</button>
+      </form>
+    </>
+  )
 }
 
 export default NewRecipe

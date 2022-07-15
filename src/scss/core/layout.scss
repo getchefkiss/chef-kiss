@@ -1,0 +1,12 @@
+.full-width {
+    width: calc(100% - ($body-margin * 2));
+}
+.full-height {
+    height: calc(100% - ($body-margin * 2));
+}
+
+.bottom {
+    margin-top: auto;
+}
+
+.sticky { display: sticky }

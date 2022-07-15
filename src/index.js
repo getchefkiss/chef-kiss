@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './css/index.css'
+import './scss/index.scss'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
 import { FirebaseContext } from './screens/context/FirebaseContext'
 import data from '../package.json'
 import { initCookies } from './etc/cookies'
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -18,7 +17,7 @@ root.render(
   </React.StrictMode>
 )
 
-initCookies()
+//initCookies()
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,5 +1,5 @@
 import react from 'react'
-import './style.css'
+import './style.scss'
 
 const TopNav = ({ children }) => {
     return (
