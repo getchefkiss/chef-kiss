@@ -1,6 +1,6 @@
 {
   "name": "chef-kiss",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "private": true,
   "homepage": "https://getchefkiss.github.io/chef-kiss/",
   "dependencies": {
@@ -16,7 +16,6 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.2",
-    "sass": "^1.53.0",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.3",
@@ -60,6 +59,9 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "scss": "^0.2.4"
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.2",
+    "scss": "^0.2.4",
+    "webpack": "^5.73.0"
   }
 }

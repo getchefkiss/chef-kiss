@@ -1,39 +1,39 @@
 import React from 'react'
-
 import { useNavigate } from 'react-router-dom'
-import { setLoggedinCookie } from '../../etc/cookies'
-
 import { signInWithGoogle } from '../../etc/firebase'
+
+import CKButton from '../../design/components/CKButton/CKButton'
+import { useEffect } from 'react'
 
 const SignIn = () => {
   const navigate = useNavigate()
 
   return (
     <>
-      <div className="flex flex-dir-col gap-45 align-items-center">
-        <div className="flex flex-dir-col gap-5">
-          <h1 className="text-center">Sign in</h1>
-          <h2 className="text-center fg-white-50">More sign in options are coming soon!</h2>
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
+        <h1 className="headtext textcenter">The new recipe book</h1>
+        <h2 className="titletext textcenter subtext">
+          Save, share & view recipes all in one platform.
+        </h2>
       </div>
 
-      <button
-        className="bottom"
+      <CKButton
+        style={{ width: 250 }}
         onClick={async (e) => {
           switch (await signInWithGoogle()) {
             case 'auth/user-disabled':
-              alert('Sorry, but this account is disabled. Please try a diffrent account.')
+              navigate('/acc/disabled')
               break
             case true:
               navigate('/home')
               break
           }
-          //setLoggedinCookie(true)
-          //navigate('/home')
         }}
+        varient="text-fill"
+        className="bottom center"
       >
         Sign in with Google
-      </button>
+      </CKButton>
     </>
   )
 }

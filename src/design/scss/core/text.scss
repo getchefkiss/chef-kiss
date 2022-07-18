@@ -1,0 +1,35 @@
+@use '../variable' as v;
+
+h1,
+h2,
+h3,
+h4,
+a,
+p {
+  margin: 0;
+}
+
+.headtext {
+  font-weight: 900;
+  font-size: 40px;
+}
+.titletext {
+  font-weight: 700;
+  font-size: 25px;
+}
+.subtitletext {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+button {
+  font: v.$text-font;
+  font-size: 15px;
+}
+
+.subtext {
+  color: v.$subtext-color;
+}
+.textcenter {
+  text-align: center;
+}

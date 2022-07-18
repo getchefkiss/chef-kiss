@@ -5,18 +5,14 @@ import { getLoggedinCookie } from '../../etc/cookies'
 import { auth } from '../../etc/firebase'
 
 const AuthCheck = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    useEffect(() => {
-        if (auth.currentUser) navigate('/home')
-        else navigate('/signin')
-    }, [])
+  useEffect(() => {
+    if (auth.currentUser) navigate('/home')
+    else navigate('/signin')
+  }, [])
 
-    return (
-        <>
-            Checking auth...
-        </>
-    )
+  return <>Checking auth...</>
 }
 
 export default AuthCheck

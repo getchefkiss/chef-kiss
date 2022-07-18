@@ -12,24 +12,27 @@ import packageJson from '../package.json'
 import ViewRecipe from './screens/recipes/ViewRecipe'
 import NewRecipe from './screens/recipes/NewRecipe'
 import Search from './screens/Search'
+import DisabledAccount from './screens/auth/Disabled'
 
 function App() {
   return (
-    <div className="app flex flex-dir-col gap-30">
+    <div className="app">
       <Router basename="/">
         <Routes>
           <Route exact path="/" element={<AuthCheck />} />
 
-          <Route path="/signin" element={<SignIn />} />
-
           <Route path="/home" element={<Home />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/search" element={<Search />} />
 
+          {/* Account */}
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/acc/disabled" element={<DisabledAccount />} />
+
+          {/* Recipe */}
           <Route path="/recipe/new" element={<NewRecipe />} />
           <Route path="/recipe/:recipeID" element={<ViewRecipe />} />
         </Routes>
-        <p className="text-center sub-text">{packageJson.version} | Chef Kiss 2022</p>
       </Router>
     </div>
   )

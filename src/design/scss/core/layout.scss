@@ -1,0 +1,15 @@
+@use '../variable' as v;
+
+.bottom {
+  margin-top: auto;
+}
+.fix-bottom {
+  position: absolute;
+
+  bottom: v.$body-margin;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
