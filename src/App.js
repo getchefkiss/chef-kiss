@@ -1,38 +1,25 @@
-import React, { useEffect } from 'react'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import React from 'react'
 
-import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import SignIn from './screens/acc/SignIn'
+import Home from './screens/app/Home'
 import AuthCheck from './screens/auth/AuthCheck'
 
-import SignIn from './screens/auth/Sign-In'
-import Home from './screens/Home'
-import Settings from './screens/Settings'
-
-import packageJson from '../package.json'
-import ViewRecipe from './screens/recipes/ViewRecipe'
-import NewRecipe from './screens/recipes/NewRecipe'
-import Search from './screens/Search'
-import DisabledAccount from './screens/auth/Disabled'
+import PageNotFound from './screens/empty/404'
 
 function App() {
   return (
-    <div className="app">
+    <div className="">
       <Router basename="/">
-        <Routes>
-          <Route exact path="/" element={<AuthCheck />} />
+        <AuthCheck>
+          <Routes>
+            <Route path="/acc/sign_in" element={<SignIn />} />
 
-          <Route path="/home" element={<Home />} />
-          <Route path="/search" element={<Search />} />
+            <Route path="/app/home" element={<Home />} />
 
-          {/* Account */}
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/acc/disabled" element={<DisabledAccount />} />
-
-          {/* Recipe */}
-          <Route path="/recipe/new" element={<NewRecipe />} />
-          <Route path="/recipe/:recipeID" element={<ViewRecipe />} />
-        </Routes>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </AuthCheck>
       </Router>
     </div>
   )

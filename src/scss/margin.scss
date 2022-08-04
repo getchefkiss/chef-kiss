@@ -1,0 +1,318 @@
+@use './spacing' as s;
+
+body {
+  margin: 0;
+}
+
+// --- Full Margin ---
+.margin_sm {
+  margin: s.$space_sm;
+}
+.margin_med_1 {
+  margin: s.$space_med_1;
+}
+.margin_med_2 {
+  margin: s.$space_med_2;
+}
+.margin_med_3 {
+  margin: s.$space_med_3;
+}
+.margin_lg_1 {
+  margin: s.$space_large_1;
+}
+.margin_lg_2 {
+  margin: s.$space_large_2;
+}
+.margin_lg_3 {
+  margin: s.$space_large_3;
+}
+.margin_xlg_1 {
+  margin: s.$space_xlarge_1;
+}
+.margin_xlg_2 {
+  margin: s.$space_xlarge_2;
+}
+.margin_xlg_3 {
+  margin: s.$space_xlarge_3;
+}
+.margin_xxlg_1 {
+  margin: s.$space_xxlarge_1;
+}
+.margin_xxlg_2 {
+  margin: s.$space_xxlarge_2;
+}
+.margin_xxlg_3 {
+  margin: s.$space_xxlarge_3;
+}
+
+// --- X Margin ---
+.margin_x_sm {
+  margin-left: s.$space_sm;
+  margin-right: s.$space_sm;
+}
+.margin_x_med_1 {
+  margin-left: s.$space_med_1;
+  margin-right: s.$space_med_1;
+}
+.margin_x_med_2 {
+  margin-left: s.$space_med_2;
+  margin-right: s.$space_med_2;
+}
+.margin_x_med_3 {
+  margin-left: s.$space_med_3;
+  margin-right: s.$space_med_3;
+}
+.margin_x_lg_1 {
+  margin-left: s.$space_large_1;
+  margin-right: s.$space_large_1;
+}
+.margin_x_lg_2 {
+  margin-left: s.$space_large_2;
+  margin-right: s.$space_large_2;
+}
+.margin_x_lg_3 {
+  margin-left: s.$space_large_3;
+  margin-right: s.$space_large_3;
+}
+.margin_x_xlg_1 {
+  margin-left: s.$space_xlarge_1;
+  margin-right: s.$space_xlarge_1;
+}
+.margin_x_xlg_2 {
+  margin-left: s.$space_xlarge_2;
+  margin-right: s.$space_xlarge_2;
+}
+.margin_x_xlg_3 {
+  margin-left: s.$space_xlarge_3;
+  margin-right: s.$space_xlarge_3;
+}
+.margin_x_xxlg_1 {
+  margin-left: s.$space_xxlarge_1;
+  margin-right: s.$space_xxlarge_1;
+}
+.margin_x_xxlg_2 {
+  margin-left: s.$space_xxlarge_2;
+  margin-right: s.$space_xxlarge_2;
+}
+.margin_x_xxlg_3 {
+  margin-left: s.$space_xxlarge_3;
+  margin-right: s.$space_xxlarge_3;
+}
+
+// --- Y Margin ---
+.margin_y_sm {
+  margin-top: s.$space_sm;
+  margin-bottom: s.$space_sm;
+}
+.margin_y_med_1 {
+  margin-top: s.$space_med_1;
+  margin-bottom: s.$space_med_1;
+}
+.margin_y_med_2 {
+  margin-top: s.$space_med_2;
+  margin-bottom: s.$space_med_2;
+}
+.margin_y_med_3 {
+  margin-top: s.$space_med_3;
+  margin-bottom: s.$space_med_3;
+}
+.margin_y_lg_1 {
+  margin-top: s.$space_large_1;
+  margin-bottom: s.$space_large_1;
+}
+.margin_y_lg_2 {
+  margin-top: s.$space_large_2;
+  margin-bottom: s.$space_large_2;
+}
+.margin_y_lg_3 {
+  margin-top: s.$space_large_3;
+  margin-bottom: s.$space_large_3;
+}
+.margin_y_xlg_1 {
+  margin-top: s.$space_xlarge_1;
+  margin-bottom: s.$space_xlarge_1;
+}
+.margin_y_xlg_2 {
+  margin-top: s.$space_xlarge_2;
+  margin-bottom: s.$space_xlarge_2;
+}
+.margin_y_xlg_3 {
+  margin-top: s.$space_xlarge_3;
+  margin-bottom: s.$space_xlarge_3;
+}
+.margin_y_xxlg_1 {
+  margin-top: s.$space_xxlarge_1;
+  margin-bottom: s.$space_xxlarge_1;
+}
+.margin_y_xxlg_2 {
+  margin-top: s.$space_xxlarge_2;
+  margin-bottom: s.$space_xxlarge_2;
+}
+.margin_y_xxlg_3 {
+  margin-top: s.$space_xxlarge_3;
+  margin-bottom: s.$space_xxlarge_3;
+}
+
+// --- Margin Top ---
+.margin_top_sm {
+  margin-top: s.$space_sm;
+}
+.margin_top_med_1 {
+  margin-top: s.$space_med_1;
+}
+.margin_top_med_2 {
+  margin-top: s.$space_med_2;
+}
+.margin_top_med_3 {
+  margin-top: s.$space_med_3;
+}
+.margin_top_lg_1 {
+  margin-top: s.$space_large_1;
+}
+.margin_top_lg_2 {
+  margin-top: s.$space_large_2;
+}
+.margin_top_lg_3 {
+  margin-top: s.$space_large_3;
+}
+.margin_top_xlg_1 {
+  margin-top: s.$space_xlarge_1;
+}
+.margin_top_xlg_2 {
+  margin-top: s.$space_xlarge_2;
+}
+.margin_top_xlg_3 {
+  margin-top: s.$space_xlarge_3;
+}
+.margin_top_xxlg_1 {
+  margin-top: s.$space_xxlarge_1;
+}
+.margin_top_xxlg_2 {
+  margin-top: s.$space_xxlarge_2;
+}
+.margin_top_xxlg_3 {
+  margin-top: s.$space_xxlarge_3;
+}
+
+// --- Margin Right ---
+.margin_right_sm {
+  margin-right: s.$space_sm;
+}
+.margin_right_med_1 {
+  margin-right: s.$space_med_1;
+}
+.margin_right_med_2 {
+  margin-right: s.$space_med_2;
+}
+.margin_right_med_3 {
+  margin-right: s.$space_med_3;
+}
+.margin_right_lg_1 {
+  margin-right: s.$space_large_1;
+}
+.margin_right_lg_2 {
+  margin-right: s.$space_large_2;
+}
+.margin_right_lg_3 {
+  margin-right: s.$space_large_3;
+}
+.margin_right_xlg_1 {
+  margin-right: s.$space_xlarge_1;
+}
+.margin_right_xlg_2 {
+  margin-right: s.$space_xlarge_2;
+}
+.margin_right_xlg_3 {
+  margin-right: s.$space_xlarge_3;
+}
+.margin_right_xxlg_1 {
+  margin-right: s.$space_xxlarge_1;
+}
+.margin_right_xxlg_2 {
+  margin-right: s.$space_xxlarge_2;
+}
+.margin_right_xxlg_3 {
+  margin-right: s.$space_xxlarge_3;
+}
+
+// --- Margin Bottom ---
+.margin_bottom_sm {
+  margin-bottom: s.$space_sm;
+}
+.margin_bottom_med_1 {
+  margin-bottom: s.$space_med_1;
+}
+.margin_bottom_med_2 {
+  margin-bottom: s.$space_med_2;
+}
+.margin_bottom_med_3 {
+  margin-bottom: s.$space_med_3;
+}
+.margin_bottom_lg_1 {
+  margin-bottom: s.$space_large_1;
+}
+.margin_bottom_lg_2 {
+  margin-bottom: s.$space_large_2;
+}
+.margin_bottom_lg_3 {
+  margin-bottom: s.$space_large_3;
+}
+.margin_bottom_xlg_1 {
+  margin-bottom: s.$space_xlarge_1;
+}
+.margin_bottom_xlg_2 {
+  margin-bottom: s.$space_xlarge_2;
+}
+.margin_bottom_xlg_3 {
+  margin-bottom: s.$space_xlarge_3;
+}
+.margin_bottom_xxlg_1 {
+  margin-bottom: s.$space_xxlarge_1;
+}
+.margin_bottom_xxlg_2 {
+  margin-bottom: s.$space_xxlarge_2;
+}
+.margin_bottom_xxlg_3 {
+  margin-bottom: s.$space_xxlarge_3;
+}
+
+// --- Margin Left ---
+.margin_left_sm {
+  margin-left: s.$space_sm;
+}
+.margin_left_med_1 {
+  margin-left: s.$space_med_1;
+}
+.margin_left_med_2 {
+  margin-left: s.$space_med_2;
+}
+.margin_left_med_3 {
+  margin-left: s.$space_med_3;
+}
+.margin_left_lg_1 {
+  margin-left: s.$space_large_1;
+}
+.margin_left_lg_2 {
+  margin-left: s.$space_large_2;
+}
+.margin_left_lg_3 {
+  margin-left: s.$space_large_3;
+}
+.margin_left_xlg_1 {
+  margin-left: s.$space_xlarge_1;
+}
+.margin_left_xlg_2 {
+  margin-left: s.$space_xlarge_2;
+}
+.margin_left_xlg_3 {
+  margin-left: s.$space_xlarge_3;
+}
+.margin_left_xxlg_1 {
+  margin-left: s.$space_xxlarge_1;
+}
+.margin_left_xxlg_2 {
+  margin-left: s.$space_xxlarge_2;
+}
+.margin_left_xxlg_3 {
+  margin-left: s.$space_xxlarge_3;
+}

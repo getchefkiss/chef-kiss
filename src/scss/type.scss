@@ -1,0 +1,21 @@
+$sans_serif_fallback: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$sans_serif_font: 'Switzer';
+
+body {
+  font-family: $sans_serif_font, $sans_serif_fallback;
+  line-height: 100%;
+  font-size: 16px;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+button {
+  text-rendering: optimizeLegibility;
+  font-family: $sans_serif_font, $sans_serif_fallback;
+}

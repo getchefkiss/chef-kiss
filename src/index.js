@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './design/scss/global.scss'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
-import { FirebaseContext } from './screens/context/FirebaseContext'
-import data from '../package.json'
-import { initCookies } from './etc/cookies'
+import { FirebaseContext } from './context/FirebaseContext'
+
+import './scss/global.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

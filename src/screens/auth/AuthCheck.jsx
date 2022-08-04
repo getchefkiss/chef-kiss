@@ -1,18 +1,38 @@
-import react from 'react'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getLoggedinCookie } from '../../etc/cookies'
-import { auth } from '../../etc/firebase'
 
-const AuthCheck = () => {
+import { useFirebaseContext } from '../../context/FirebaseContext'
+
+const AuthCheck = ({ children }) => {
   const navigate = useNavigate()
+  const { user } = useFirebaseContext()
+
+  const [displayText, setDisplayText] = useState('Checking auth...')
 
   useEffect(() => {
-    if (auth.currentUser) navigate('/home')
-    else navigate('/signin')
+    if (user) {
+      console.log('\n --- ')
+      console.log('User found.')
+      console.log(user)
+
+      setDisplayText('')
+
+      navigate('/app/home')
+    } else {
+      console.log('\n --- ')
+      console.log('User not found.')
+
+      setDisplayText('')
+
+      navigate('/acc/sign_in')
+    }
   }, [])
 
-  return <>Checking auth...</>
+  return (
+    <>
+      {children} <p>{displayText}</p>
+    </>
+  )
 }
 
 export default AuthCheck

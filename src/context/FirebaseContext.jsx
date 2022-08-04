@@ -1,24 +1,23 @@
+import React, { useState, createContext, useEffect, useContext } from 'react'
+
+import { auth, db } from '../etc/firebase'
 import { collection, onSnapshot } from 'firebase/firestore'
-import react, { useState } from 'react'
-import { createContext } from 'react'
-import { useEffect } from 'react'
-import { useContext } from 'react'
-import { auth, db } from '../../etc/firebase'
-import data from '../../etc/compatability.json'
+
+import data from '../etc/compatability.json'
 
 const firebaseContext = createContext()
 
 export const FirebaseContext = ({ children }) => {
   const [user, setUser] = useState({})
-  const [recipes, setRecipes] = useState([])
-  const [myRecipes, setMyRecipes] = useState([])
+  const [globalRecipes, setRecipes] = useState([])
+  const [localRecipes, setMyRecipes] = useState([])
 
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser)
     })
 
-    const unsubscribe = onSnapshot(collection(db, 'recipes'), (snapshot) => {
+    const recipeFetch = onSnapshot(collection(db, 'recipes'), (snapshot) => {
       let recipes = []
       let myRecipes = []
       let needMatchingFormatVersion = data.needRecipeFormatVersion
@@ -32,15 +31,6 @@ export const FirebaseContext = ({ children }) => {
             }
           } else {
             console.log(`Problem doc(s): ${doc.data().title}`)
-
-            /*setDoc(
-              doc(db, 'recipes', doc.id),
-              {
-                formatVersion: data.formatVersion,
-                emoji: null,
-              },
-              { merge: true }
-            ).then(() => console.log(`Doc [${doc.id}] updated to new format.`))*/
           }
         } else {
           recipes.push({ ...doc.data(), id: doc.id })
@@ -52,11 +42,11 @@ export const FirebaseContext = ({ children }) => {
       setRecipes(recipes)
       setMyRecipes(myRecipes)
     })
-    return unsubscribe
+    return recipeFetch
   }, [])
 
   return (
-    <firebaseContext.Provider value={{ user, recipes, myRecipes }}>
+    <firebaseContext.Provider value={{ user, globalRecipes, localRecipes }}>
       {children}
     </firebaseContext.Provider>
   )
