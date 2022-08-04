@@ -1,6 +1,6 @@
 <p align='center'>
   <a href='https://getchefkiss.github.io/chef-kiss/' target='_blank'>
-    <img src='https://raw.githubusercontent.com/getchefkiss/chef-kiss/master/public/icon.ico'>
+    <img src='https://raw.githubusercontent.com/getchefkiss/chef-kiss/master/public/icons/icon.ico'>
     <h3 align='center'><strong>Chef Kiss</strong></h3>
   </a>
 </p>
